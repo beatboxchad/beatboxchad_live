@@ -9,6 +9,9 @@
 (def fx-group-3 8)
 
 
+;(defsynth pitch-control [
+
+
 (defn inst-node [nname]
   )
 
@@ -51,4 +54,3 @@
                         {:target 4}))
 
 (node-free guitar-reverb)
-

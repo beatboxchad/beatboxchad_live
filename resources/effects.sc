@@ -37,6 +37,13 @@ SynthDef(\funDelay1, {
 	Out.ar(out, sig);
 }).load();
 
+
+SynthDef(\wah, {
+}).load()
+
+SynthDef(\compressor, {
+}).load()
+
 SynthDef(\funDelay2, {
 	//TODO Ugen or function that changes a note to a delay time for the oscillating delays
 
