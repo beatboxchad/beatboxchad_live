@@ -15,7 +15,7 @@ SystemClock.sched(2.0, {
 ~engine.sendMsg("/set", "jack_timebase_master", 1);
 
 
-	~engine.sendMsg("/add_midi_binding", "0 on 55 set tap_tempo -2 0 1 norm 0 127");
+~engine.sendMsg("/add_midi_binding", "0 on 55 set tap_tempo -2 0 1 norm 0 127");
 
 ~engine_midi = MIDIOut.findPort("sooperlooper-sooperlooper", "sooperlooper-sooperlooper");
 MIDIOut.connect(0,~engine_midi);
@@ -31,8 +31,6 @@ for (0,7, {arg i; ~engine.sendMsg(format("/sl/%/set", i), "overdub_quantized", 1
 nil;
 });
 
-// Timing sync -- make this some kind of callback.
-
 
 ~player = Routine({
 MIDIOut(0).noteOn(0,55);
@@ -44,3 +42,6 @@ MIDIOut(0).noteOn(0,55);
 // MIDI control
 
 // loop soundfile access
+
+
+// maybe this will be 

@@ -2,6 +2,10 @@
  [:require [overtone.core :refer :all]]
 )
 
+(defn init []
+
+  ;
+  )
 (def control-node-group 3)
 (def inst-group 19)
 (def fx-group-1 6)
@@ -27,6 +31,7 @@
          :controlbus1 delay-time-bus} 
         {:target 4})
   )
+;; then need to return something that can be freed
 
 
 ;;examples
