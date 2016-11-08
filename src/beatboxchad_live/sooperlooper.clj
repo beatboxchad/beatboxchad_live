@@ -72,6 +72,6 @@
             )
   )
 
-(save-loop 0)
+(save-loop 1)
 
 (setup-sooperlooper)
