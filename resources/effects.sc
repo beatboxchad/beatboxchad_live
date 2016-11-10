@@ -1,5 +1,3 @@
-
-
 // Synths intended for monitoring a HW input for pitch, amplitude, etc for output to a control bus. later, bbcut and other fanciness
 
 // some day these will all be translated into Overtone.
@@ -40,17 +38,17 @@ SynthDef(\funDelay1, {
 }).load();
 
 
-SynthDef(\wah, {
-}).load()
+//SynthDef(\wah, {
+//}).load()
 
-SynthDef(\compressor, {
-}).load()
+//SynthDef(\compressor, {
+//}).load()
 
 SynthDef(\funDelay2, {
 	//TODO Ugen or function that changes a note to a delay time for the oscillating delays
 
 	arg dtimeCtl, in, out = [0, 1];
-	var delaytime = In.kr(controlbus1).linlin(1, 127, 0.01, 0.3), delays, signal;
+	var delaytime = In.kr(dtimeCtl).linlin(1, 127, 0.01, 0.3), delays, signal;
 	signal = Mix.new([SoundIn.ar(in)]);
 
 	delays = Mix.fill(100, {arg i; var dt;
@@ -58,7 +56,7 @@ SynthDef(\funDelay2, {
 		DelayL.ar(signal, 1.2, dt);});
 
 	Out.ar(out, (signal+delays));
-}).load()
+}).load();
 
 // from ixi tutorial 12 -- you can get some WILD sounds out of this if you turn up the settings
 // once again you can get notes out of it by turning up the rate -- TODO WRITE SOMETHING FOR THAT, THAT IS YOUR SOUND

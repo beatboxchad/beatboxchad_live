@@ -1,5 +1,14 @@
 (ns beatboxchad-live.sooperlooper
- [:require [overtone.core :refer :all]] )
+ [:require [overtone.core :refer :all]
+           [clojure.java.shell :as shell]
+           ] )
+
+(for [n (range 8)]
+      (shell/sh "jack_connect"
+                (format "sooperlooper:loop%s_out_1" n)
+                (format "SuperCollider:in_%s" (+ 3 n))
+                )
+      )
 
 ;; SL OSC docs: http://essej.net/sooperlooper/doc_osc.html
 
@@ -13,12 +22,25 @@
                             "quantize" 2
                             "mute_quantized" 1
                             "overdub_quantized" 1
+                            "use_common_outs" 0
                             }
   )
 
 (defn add-mono-loop []
   (osc-send engine "/loop_add" 1 40)
   )
+
+(defn record [loop-index]
+  (osc-send engine 
+            (format "/sl/%s/hit" loop-index) 
+            "record")
+  )
+
+(defn ping-sooperlooper []
+  ; send a ping 
+  (osc-send engine "/ping"  "localhost:9960" "/ping-response")
+  )
+
 
 ;; ensure there are >= 8 loops using loopcount in sl's ping response
 (osc-handle overtone-osc "/ping-response" 
@@ -41,11 +63,6 @@
             value
             )
   
-  )
-
-(defn ping-sooperlooper []
-  ; send a ping 
-  (osc-send engine "/ping"  "localhost:9960" "/ping-response")
   )
 
 
@@ -71,7 +88,5 @@
             "nil"
             )
   )
-
-(save-loop 1)
 
 (setup-sooperlooper)

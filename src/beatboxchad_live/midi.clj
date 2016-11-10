@@ -1,28 +1,16 @@
 (ns beatboxchad-live.midi
- [:require [overtone.core :refer :all]] )
+ [:require [overtone.core :refer :all]] 
+ [:require [beatboxchad-live.sooperlooper]])
 
-;; get the value from expression pedal on MIDI controller and write it to the bus
-(on-event [:midi :control-change]
+(def fcb (midi-mk-full-device-key (midi-find-connected-device "mio")))
+
+(on-event (conj fcb :program-change)
           (fn [e]
-              (let [control-number (:data1 e)
-                    value (:data2 e)
-                    ]
-                (do
-                (if (= control-number 27)
-                  (do
-                    ;; we need to out it to a control bus and then set the
-                    ;; effect to be listening to that control bus
-                    (control-bus-set! delay-time-bus value) 
-                    )
-                  )
-                (if (= control-number 7)
-                     (do
-                       ;; we need to out it to a control bus and then set the
-                       ;; effect to be listening to that control bus
-                       (control-bus-set! delay-feedback-bus value) 
-                     )
-              )
+            (let [note (:note e)]
+              (if (< note 8 )
+                (beatboxchad-live.sooperlooper/record note)
                 )
-                   ))
-           ::delay-pedal-handler
+              )
+            )
+          ::sooperlooper-record
           )
