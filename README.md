@@ -1,14 +1,15 @@
 # beatboxchad_live
 
-A Clojure library designed to ... well, that part is up to you.
+Using Overtone to control Sooperlooper, manipulate the loops in interesting ways, and apply audio effects.
+
+Also some fun synths.
+
 
 ## Usage
 
-FIXME
+Intended for use as part of a live performance, preferably with a small ensemble (but solo beatboxing/instrument-playing like Reggie Watts or Beardyman too)
 
 ## License
-
-Copyright © 2016 FIXME
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
