@@ -1,7 +1,11 @@
 (ns beatboxchad-live.sooperlooper
  [:require [overtone.core :refer :all]
            [clojure.java.shell :as shell]
+           [beatboxchad-live.core]
            ] )
+
+; FIXME figure out how not to block
+;(shell/sh "alsa_out" "-d" "hw:PCH" "-j" "monitor" "&")
 
 (for [n (range 8)]
       (shell/sh "jack_connect"
@@ -14,7 +18,8 @@
 
 (def loop-storage-dir "/home/chad/beatboxchad_live/resources/sounds")
 (def engine (osc-client "127.0.0.1" 9951))
-(def overtone-osc (osc-server 9960 "osc-overtone"))
+
+
 (def default-loop-settings {"sync" 1
                             "playback_sync" 1
                             "tempo_stretch" 1
@@ -30,11 +35,12 @@
   (osc-send engine "/loop_add" 1 40)
   )
 
-(defn record [loop-index]
+(defn loop-op [loop-index op op-type]
   (osc-send engine 
-            (format "/sl/%s/hit" loop-index) 
-            "record")
+            (format "/sl/%s/%s" loop-index op-type) 
+            op)
   )
+
 
 (defn ping-sooperlooper []
   ; send a ping 
@@ -43,7 +49,7 @@
 
 
 ;; ensure there are >= 8 loops using loopcount in sl's ping response
-(osc-handle overtone-osc "/ping-response" 
+(osc-handle beatboxchad-live.core/overtone-osc "/ping-response" 
             (fn [response]
               (let [loopcount (last (get response :args))]
                 (if (< loopcount 8)
@@ -64,7 +70,6 @@
             )
   
   )
-
 
 (defn setup-sooperlooper []
   (do

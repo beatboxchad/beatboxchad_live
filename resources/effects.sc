@@ -1,42 +1,40 @@
 // Synths intended for monitoring a HW input for pitch, amplitude, etc for output to a control bus. later, bbcut and other fanciness
 
-// some day these will all be translated into Overtone.
-(
-
 //pitch
-SynthDef("pitch1", {
-	arg in, out;
+(
+SynthDef(\pitch1, {
+	arg bus, outbus;
 	var freq, hasFreq;
-	# freq, hasFreq = Pitch.kr(In.ar(in), ampThreshold: 0.02, median: 7);
-	Out.kr(out, freq);
+    # freq, hasFreq = Tartini.kr(bus, 0.93,1024,512,512);
+	//# freq, hasFreq = Pitch.kr(In.ar(in), ampThreshold: 0.02, median: 7);
+	Out.kr(outbus, freq);
 }).load();
 
 //amplitude
 SynthDef(\amplitude1, {
-	arg in, out;
-	var amp = Amplitude.kr(In.ar(in), 0.05, 0.05);
-	Out.kr(out, amp);
+	arg bus, outbus;
+	var amp = Amplitude.kr(In.ar(bus), 0.05, 0.05);
+	Out.kr(outbus, amp);
 }).load();
+)
 
-//beat slice!!!
-
-
-// a long list of analyzers could go here.
 )
 
 // actual effects
 (
 SynthDef(\funDelay1, {
-	arg in, out, feedbackBus, dtimeBus;
+	arg bus, feedbackBus, dtimeBus;
 	var maxdelay, dtime, decay, sig;
-	sig = In.ar(in);
+	sig = In.ar(bus);
 	dtime = In.kr(dtimeBus).linlin(0, 127, 0.2, 4);
 	decay = In.kr(feedbackBus).linlin(0,127, 1, 24) * dtime;
 	maxdelay = 24 * dtime;
 	sig = Mix.new([sig, CombC.ar(sig, maxdelay, dtime, decay)]);
-	Out.ar(out, sig);
-}).load();
+	ReplaceOut.ar(bus, sig);
+}).store();
 
+//SynthDef(\harmonizer, {
+//}).load()
 
 //SynthDef(\wah, {
 //}).load()
@@ -55,8 +53,13 @@ SynthDef(\funDelay2, {
 		dt = delaytime*(i/10+0.1);
 		DelayL.ar(signal, 1.2, dt);});
 
-	Out.ar(out, (signal+delays));
+	ReplaceOut.ar(out, (signal+delays));
 }).load();
+
+SynthDef(\ampBoink, {
+	arg bus;
+
+}).load()
 
 // from ixi tutorial 12 -- you can get some WILD sounds out of this if you turn up the settings
 // once again you can get notes out of it by turning up the rate -- TODO WRITE SOMETHING FOR THAT, THAT IS YOUR SOUND
@@ -82,16 +85,27 @@ SynthDef(\flanger, {
 }).load();
 
 // also from ixi 12, this one's not working as intended but the breakage sounds quite pleasant.
-SynthDef(\chorus, { arg inbus=10, outbus=0, predelay=0.08, speed=0.05, depth=0.1, ph_diff=0.5;
+SynthDef(\chorus, {
+	arg bus, predelay=0.08, speed=0.05, depth=0.1, ph_diff=0.5;
 	var in, sig, modulators, numDelays = 12;
-	in = In.ar(inbus, 1);
+	in = In.ar(bus, 1);
 	modulators = Array.fill(numDelays, {arg i;
     LFPar.kr(speed * rrand(0.94, 1.06), ph_diff * i, depth, predelay);});
 	sig = DelayC.ar(in, 0.5, modulators);
 	sig = sig.sum; //Mix(sig);
-	Out.ar(outbus, sig!2); // output in stereo
+	ReplaceOut.ar(bus, sig!2); // output in stereo
 
 }).load()
 )
 
 // synths
+
+(
+SynthDef(\noiseSaw1, {
+	arg freq, amp, bus;
+	var out;
+	out = Mix.new(VarSaw.ar(freq * [0.5,1,2], 0, LFNoise1.kr(0.3,0.1,0.1), amp));
+	Out.ar(bus, out);
+}).load()
+
+)

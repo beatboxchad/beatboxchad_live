@@ -2,60 +2,60 @@
  [:require [overtone.core :refer :all]]
 )
 
-(defn init []
-
-  ;
-  )
-(def control-node-group 3)
-(def inst-group 19)
-(def fx-group-1 6)
-(def fx-group-2 7)
-(def fx-group-3 8)
+(def overtone-osc (osc-server 9960 "osc-overtone"))
 
 
-;(defsynth pitch-control [
 
+(comment IDEA: high amplitude and/or pitch triggers brief delay-hold jitter
+         
+         you can make all kinds of little triggered effects like this, maybe
+         spawn one-shot synths with a done-action of FREE when a control bus
+         fires. Environmental, hands-free control of fx. Just smack the guitar
+         and bdddthdtdtdtdtttttt
 
-(defn inst-node [nname]
-  )
-
-(defn fx-node [nname]
+         when the wicked rule 
+         )
+(definst audio-in-0 []
+  (sound-in:ar 0)
   )
 
-(defn controller-node [nname]
-
-  ;; need a bus, need a group
-  (node "percusReson1" 
-        {:in guitar-signal-bus1
-         :out 0
-         :controlbus1 delay-time-bus} 
-        {:target 4})
+(definst audio-in-1 []
+  (sound-in:ar 1)
   )
-;; then need to return something that can be freed
+
+(definst sl-in-0 []
+  (sound-in:ar 2)
+  )
+
+(definst sl-in-1 []
+  (sound-in:ar 3)
+  )
 
 
-;;examples
-(ctl guitar-in :outbus guitar-signal-bus1)
-(def guitar-delay (node "funDelay1" {:dtimeBus delay-time-bus
-                                     :feedbackBus delay-feedback-bus
-                                     :in 0
-                                     :out 0} {:target 9}))
-(node-free guitar-delay)
-(ctl guitar-delay :in 1)
+(definst sl-in-2 []
+  (sound-in:ar 4)
+  )
 
-(def vocoder (node "vocoder1" {:modulator 1 :carrier 1 :out 0} {:target 5}))
-(node-free vocoder)
+(definst sl-in-3 []
+  (sound-in:ar 5)
+  )
 
-(def guitar-reverb (node "reverb1" 
-                        {:inBus guitar-signal-bus1
-                         :outBus 0} 
-                        {:target 5}))
-(ctl guitar-reverb :inBus 0)
+(definst sl-in-4 []
+  (sound-in:ar 6)
+  )
 
-(def guitar-delay1 (node "percusReson1" 
-                        {:in guitar-signal-bus1
-                         :out 0
-                         :controlbus1 delay-time-bus} 
-                        {:target 4}))
+(definst sl-in-5 []
+  (sound-in:ar 7)
+  )
 
-(node-free guitar-reverb)
+(definst sl-in-6 []
+  (sound-in:ar 8)
+  )
+
+(definst sl-in-7 []
+  (sound-in:ar 9)
+  )
+
+(definst sl-in-8 []
+  (sound-in:ar 10)
+  )
