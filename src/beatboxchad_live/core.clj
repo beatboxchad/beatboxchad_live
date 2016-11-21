@@ -1,5 +1,10 @@
 (ns beatboxchad-live.core
- [:require [overtone.core :refer :all]]
+ [:require 
+  [overtone.core :refer :all]
+  [beatboxchad-live.midi :refer :all]
+  [beatboxchad-live.sooperlooper :refer :all]
+  [beatboxchad-live.server-fx :refer :all]
+  ]
 )
 
 (def overtone-osc (osc-server 9960 "osc-overtone"))
@@ -22,6 +27,14 @@
 (definst audio-in-1 []
   (sound-in:ar 1)
   )
+
+(kill audio-in-1)
+(audio-in-1)
+
+(def cow (inst-fx! audio-in-1 fx-amp-boink))
+(ctl cow :threshold 0.002)
+(kill cow)
+(clear-fx audio-in-1)
 
 (definst sl-in-0 []
   (sound-in:ar 2)

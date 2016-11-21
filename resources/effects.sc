@@ -58,8 +58,13 @@ SynthDef(\funDelay2, {
 
 SynthDef(\ampBoink, {
 	arg bus;
-
-}).load()
+	var in, processed, env;
+	in        = In.ar(bus);
+	env = XLine.kr(1, 0.5, 3, doneAction: 2);
+	// trying a Mix to alleviate the audible click that happens when the effect is turned on
+	processed = Mix.new([AllpassN.ar(in, 2, 0.2, 1), in]);
+	Out.ar(bus, processed);
+}).load();
 
 // from ixi tutorial 12 -- you can get some WILD sounds out of this if you turn up the settings
 // once again you can get notes out of it by turning up the rate -- TODO WRITE SOMETHING FOR THAT, THAT IS YOUR SOUND

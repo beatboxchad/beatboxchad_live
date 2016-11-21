@@ -3,6 +3,8 @@
            [clojure.java.shell :as shell]
            ] )
 
+(def amplitude-control-bus-1 (control-bus))
+
 
 (defn fx-fun-delay-1 [location & args]
   (let [fxbus (:id (first (rest args)))

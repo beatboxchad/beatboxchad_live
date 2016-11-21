@@ -1,18 +1,28 @@
 (ns beatboxchad-live.sooperlooper
  [:require [overtone.core :refer :all]
            [clojure.java.shell :as shell]
-           [beatboxchad-live.core]
+           
            ] )
 
 ; FIXME figure out how not to block
 ;(shell/sh "alsa_out" "-d" "hw:PCH" "-j" "monitor" "&")
 
-(for [n (range 8)]
+(defn connect-sooperlooper-jack []
+  (do 
+    (for [n (range 8)]
       (shell/sh "jack_connect"
                 (format "sooperlooper:loop%s_out_1" n)
                 (format "SuperCollider:in_%s" (+ 3 n))
                 )
       )
+    (for [n (range 4)]
+      (shell/sh "jack_connect"
+                (format "SuperCollider:out_%s" (+ 5 n))
+                (format "sooperlooper:loop%s_in_1"(+ 4 n))
+                )
+      )
+    )
+  )
 
 ;; SL OSC docs: http://essej.net/sooperlooper/doc_osc.html
 
@@ -93,5 +103,3 @@
             "nil"
             )
   )
-
-(setup-sooperlooper)

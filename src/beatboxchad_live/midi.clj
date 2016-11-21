@@ -1,6 +1,8 @@
 (ns beatboxchad-live.midi
- [:require [overtone.core :refer :all]] 
- [:require [beatboxchad-live.sooperlooper]])
+ [:require [overtone.core :refer :all]
+  ;[beatboxchad-live.sooperlooper]
+  ]
+ )
 
 (def fcb (midi-mk-full-device-key (midi-find-connected-device "mio")))
 
