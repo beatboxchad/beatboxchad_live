@@ -1,74 +1,87 @@
 (ns beatboxchad-live.core
- [:require 
-  [overtone.core :refer :all]
-  [beatboxchad-live.midi :refer :all]
-  [beatboxchad-live.sooperlooper :refer :all]
-  [beatboxchad-live.server-fx :refer :all]
-  ]
-)
+  [:require 
+   [clojure.java.shell :as shell]
+   [overtone.core :refer :all]
+   [overtone.libs.deps :refer :all]
+   [overtone.config.log :as log]
+   ;[beatboxchad-live.midi :refer :all]
+   ;[beatboxchad-live.sooperlooper :refer :all]
+   ;[beatboxchad-live.server-fx :refer :all]
+   ;[beatboxchad-live.inst :refer :all]
+   ]
+  )
 
 (def overtone-osc (osc-server 9960 "osc-overtone"))
 
+; stolen from Overtone
+(defn- logged-sh
+  "Run a shell command and log any errors. Returns stdout."
+  [cmd & args]
+  (let [res (apply shell/sh cmd args)]
+    (when-not (zero? (:exit res))
+      (log/error "Subprocess error: " (:err res)))
+    (:out res)))
+
+(def num-hw-inputs #(count (re-seq #"system:capture_[0-9]*" (logged-sh "jack_lsp"))))
 
 
-(comment IDEA: high amplitude and/or pitch triggers brief delay-hold jitter
-         
-         you can make all kinds of little triggered effects like this, maybe
-         spawn one-shot synths with a done-action of FREE when a control bus
-         fires. Environmental, hands-free control of fx. Just smack the guitar
-         and bdddthdtdtdtdtttttt
+(defn start-processes []
+  (let [threads [(Thread. #(logged-sh "alsa_out" "-d" "hw:PCH" "-j" "monitor"))
+                (Thread. #(logged-sh "scide"))
+                (Thread. #(logged-sh "slgui"))
+                ]]
+    (doseq [thread threads]
+      (.setDaemon thread true)
+      (.start thread)
+      )
+    )
+  )
 
-         when the wicked rule 
+
+(defn evil-kill-shutdown 
+  [] 
+  "Bad bad bad! Later I'll be less lazy and actually track them processes."
+  (let [pnames ["scide" "sooperlooper" "scsynth" "slgui"]]
+         (map (fn [pname] (logged-sh "pkill" pname)) (map clojure.string/trim pnames))
          )
-(definst audio-in-0 []
-  (sound-in:ar 0)
+    )
+
+
+;; define a bunch of instruments. Thanks to
+;; http://stackoverflow.com/questions/2486752/in-clojure-how-to-define-a-variable-named-by-a-string
+;; for showing me the technique.
+(defn build-hw-inputs [input-count]
+  (do
+    (map 
+      (fn [n]
+        (let [instname (symbol (str "in-" n))]
+          (intern 'beatboxchad-live.core instname 
+                  (eval `(inst ~instname [] (sound-in:ar ~n)))
+                  )
+          )
+        )
+      (range (inc input-count))
+      )
+    ;(satisfy-deps :setup-live-insts)
+    )
   )
 
-(definst audio-in-1 []
-  (sound-in:ar 1)
+(build-hw-inputs (num-hw-inputs))
+(on-deps :studio-setup-completed
+         ::setup-live-insts1
+         (build-hw-inputs num-hw-inputs)
+)
+
+;; set them all into fx mode. Out the same channel they came in on.
+(defn fx-mode [input-count]
+  (map 
+    (fn [n]
+      (let [instname (symbol (str "beatboxchad-live.core/in-" (str n)))]
+        (ctl (:mixer @(resolve instname)) :out-bus n)
+        )
+      )
+    (range input-count)
+    )
   )
+(fx-mode (num-hw-inputs))
 
-(kill audio-in-1)
-(audio-in-1)
-
-(def cow (inst-fx! audio-in-1 fx-amp-boink))
-(ctl cow :threshold 0.002)
-(kill cow)
-(clear-fx audio-in-1)
-
-(definst sl-in-0 []
-  (sound-in:ar 2)
-  )
-
-(definst sl-in-1 []
-  (sound-in:ar 3)
-  )
-
-
-(definst sl-in-2 []
-  (sound-in:ar 4)
-  )
-
-(definst sl-in-3 []
-  (sound-in:ar 5)
-  )
-
-(definst sl-in-4 []
-  (sound-in:ar 6)
-  )
-
-(definst sl-in-5 []
-  (sound-in:ar 7)
-  )
-
-(definst sl-in-6 []
-  (sound-in:ar 8)
-  )
-
-(definst sl-in-7 []
-  (sound-in:ar 9)
-  )
-
-(definst sl-in-8 []
-  (sound-in:ar 10)
-  )
