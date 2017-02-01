@@ -42,7 +42,12 @@
 
 ;; if I really want the wacky noises I'm after, I'll need to use a buffer-based
 ;; delay. This one doesn't register the speed changes until the next repetition
-;; starts. It's not too bad if I start with a short delay time. 
+;;s starts. It's not too bad if I start with a short delay time. 
+
+;; scratch that, my problem is understanding how the trigger and envelopes
+;; work. Got closer at one point, but you can hear it returning and there are
+;; some other undesired artifacts. Might need to instantiate a fresh synth and
+;; :action 2 and all that instead of hacking it with triggers
 
 (defsynth delay-oneshot 
   "when triggered, applies a delay. Intended to be controlled by amplitude or something else clever"
@@ -52,9 +57,9 @@
    gate [1 :tr]
    ]
   (let [in (in:ar bus)
-        playback-env (env-gen (env-lin :sustain 5) gate)
-        dtime-env (env-gen (env-lin :sustain 0.1 :release 2 :level 0.95 :curve 4 ) gate)
-        processed (allpass-n:ar in 5 (- 1 (* -1 dtime-env)) 5) 
+        playback-env (env-gen (env-lin) gate)
+        dtime-env (env-gen (envelope [0.01 0.9 0.9 0.05] [0.01 0.01 3] [-8]) gate)
+        processed (allpass-n:ar in 5 dtime-env 10) 
         sig (+ in (* processed playback-env))
         ]
     (out:ar bus sig)
@@ -65,5 +70,3 @@
 (def meow (inst-fx! pitchf1 delay-oneshot))
 
 (ctl meow :gate 1)
-
-
