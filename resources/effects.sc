@@ -18,8 +18,27 @@ SynthDef(\amplitude1, {
 }).load();
 )
 
+(
+SynthDef("pitchFollow1",{
+    var in, amp, freq, hasFreq, out;
+    in = SoundIn.ar(8);
+    amp = Amplitude.kr(in, 0.05, 0.05);
+    # freq, hasFreq = Tartini.kr(in, MouseX.kr(0.5,1),512,1024,768, MouseY.kr(0.25,0.75)); //fast reacting
+
+    //freq = Lag.kr(freq.cpsmidi.round(1).midicps, 0.05);
+    out = Mix.new(VarSaw.ar(freq * [0.5,1,2], 0, LFNoise1.kr(0.3,0.1,0.1), amp));
+    //6.do({
+      //  out = AllpassN.ar(out, 0.040, [0.040.rand,0.040.rand], 2)
+    //});
+	ReplaceOut.ar(8, (out * 0.40));
+}).load();
 )
 
+x = Synth(\pitchFollow1);
+
+x = {SoundIn.ar(8)}.scope
+s.plotTree
+x.free;
 // actual effects
 (
 SynthDef(\funDelay1, {

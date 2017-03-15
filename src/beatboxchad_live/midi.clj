@@ -1,10 +1,14 @@
 (ns beatboxchad-live.midi
- [:require [overtone.core :refer :all]
-  ;[beatboxchad-live.sooperlooper]
-  ]
- )
+  [:require 
+   [overtone.core :refer :all]
+   [beatboxchad-live.sooperlooper :refer :all]
+   ]
+  )
 
-(def fcb (midi-mk-full-device-key (midi-find-connected-device "mio")))
+; midi devices I own FIXME nullpointer when device not connected
+;(def microkey (midi-mk-full-device-key (midi-find-connected-device "microKEY37")))
+;(def v49      (midi-mk-full-device-key (midi-find-connected-device "V49")))
+;(def fcb      (midi-mk-full-device-key (midi-find-connected-device "USB Midi")))
 
 (def loop-ops
   {0 {:action "record"    :hit false}
@@ -58,5 +62,3 @@
             )
           ::fcb-note-off
           )
-(remove-event-handler ::fcb-note-on)
-(remove-event-handler ::fcb-note-off)

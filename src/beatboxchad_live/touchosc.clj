@@ -6,7 +6,7 @@
   )
 
 ;FIXME de-hardcode this shit
-(def touchosc (osc-client "192.168.0.21" 9000))
+(def touchosc (osc-client "192.168.0.25" 9000))
 
 ; This is an example of how to toggle things back to touch-osc. Write code that
 ; updates the buttons when a node is freed. 
@@ -101,5 +101,3 @@
                 )
     )
   )
-
-(:reverb (get active-effects "1"))

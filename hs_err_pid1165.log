@@ -1,0 +1,1580 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f70c27af0dc, pid=1165, tid=0x00007f70bcf16700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_112-b15) (build 1.8.0_112-b15)
+# Java VM: OpenJDK 64-Bit Server VM (25.112-b15 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [libscsynth.so+0x220dc]  SC_UdpInPort::SC_UdpInPort(World*, int)+0x9c
+#
+# Core dump written. Default location: /home/chad/beatboxchad_live/core or core.1165
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f70e08e5800):  JavaThread "Thread-11" daemon [_thread_in_native, id=1295, stack(0x00007f70bce16000,0x00007f70bcf17000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000160
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00007f70680fdc90, RCX=0x00007f714cea4a97, RDX=0x0000000000000000
+RSP=0x00007f70bcf14e70, RBP=0x0000000000000000, RSI=0x0000000000000001, RDI=0x000000000000051b
+R8 =0x00007f7059d10700, R9 =0x00007f7059d10700, R10=0x00007f7059d109d0, R11=0x0000000000000246
+R12=0x0000000000000000, R13=0x00007f70bcf15670, R14=0x00007f70bcf15580, R15=0xfffffffffffffffc
+RIP=0x00007f70c27af0dc, EFLAGS=0x0000000000010202, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f70bcf14e70)
+0x00007f70bcf14e70:   000000000000e16f 0000000000000000
+0x00007f70bcf14e80:   00007f70680fdc90 00007f7068000000
+0x00007f70bcf14e90:   0000000000107000 0000000000010000
+0x00007f70bcf14ea0:   00007f70680fdc90 00007f70680fdc90
+0x00007f70bcf14eb0:   000000000000e16f 00007f70c27c5492
+0x00007f70bcf14ec0:   0000000000000010 00007f70bcf14ee0
+0x00007f70bcf14ed0:   00007f70e0c49cc0 00007f70c2a25034
+0x00007f70bcf14ee0:   000000000000000a 00007f70bcf15700
+0x00007f70bcf14ef0:   00007f70bcf14fc0 00007f70c2a24a61
+0x00007f70bcf14f00:   00007f70bcf14f70 00007f714c1944fb
+0x00007f70bcf14f10:   00007f70bcf14f38 00007f70bcf14e30
+0x00007f70bcf14f20:   0000000000000000 00007f70bcf15580
+0x00007f70bcf14f30:   00007f70e0c49cc0 00007f70c27c5460
+0x00007f70bcf14f40:   00007f70bcf15700 00007f70bcf14e30
+0x00007f70bcf14f50:   00007f70e0c49c30 0000000200000000
+0x00007f70bcf14f60:   0000000000000010 00007f70bcf14ee0
+0x00007f70bcf14f70:   00007f7000000002 00007f714c4eb6d9
+0x00007f70bcf14f80:   0000000000000001 3d7829ded40e6000
+0x00007f70bcf14f90:   00000000ffffffff 0000000000000001
+0x00007f70bcf14fa0:   0000000000000002 0000000000000004
+0x00007f70bcf14fb0:   00007f70c2a26fcc 0000000000000000
+0x00007f70bcf14fc0:   00007f70bcf15560 00007f70c2a1a1a5
+0x00007f70bcf14fd0:   0000000000000000 00007f714ccf5e18
+0x00007f70bcf14fe0:   0000000000000000 00007f70c2a19fec
+0x00007f70bcf14ff0:   00007f70bcf15020 0000000000000028
+0x00007f70bcf15000:   0000000000000000 0000000000000000
+0x00007f70bcf15010:   00007f71449a5a70 00007f70e13713c0
+0x00007f70bcf15020:   0000000000000000 0000000000000000
+0x00007f70bcf15030:   0000000000000028 0000000000000005
+0x00007f70bcf15040:   00000000ffffffff 00007f714c622681
+0x00007f70bcf15050:   0000000000000000 000000010075f028
+0x00007f70bcf15060:   00007f7068000070 00007f70e08e5800 
+
+Instructions: (pc=0x00007f70c27af0dc)
+0x00007f70c27af0bc:   66 c1 c8 08 c7 43 24 00 00 00 00 66 89 43 22 e8
+0x00007f70c27af0cc:   50 e2 ff ff 85 c0 78 2d 48 89 df e8 64 dd ff ff
+0x00007f70c27af0dc:   80 bd 60 01 00 00 00 74 15 48 8b 15 a4 1c 24 00
+0x00007f70c27af0ec:   48 8d 7b 30 48 89 d9 31 f6 e8 26 cf ff ff 48 83 
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x00007f70680fdc90 is an unknown value
+RCX=0x00007f714cea4a97: sched_setscheduler+0x7 in /usr/lib/libc.so.6 at 0x00007f714cdd3000
+RDX=0x0000000000000000 is an unknown value
+RSP=0x00007f70bcf14e70 is pointing into the stack for thread: 0x00007f70e08e5800
+RBP=0x0000000000000000 is an unknown value
+RSI=0x0000000000000001 is an unknown value
+RDI=0x000000000000051b is an unknown value
+R8 =0x00007f7059d10700 is an unknown value
+R9 =0x00007f7059d10700 is an unknown value
+R10=0x00007f7059d109d0 is an unknown value
+R11=0x0000000000000246 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x00007f70bcf15670 is pointing into the stack for thread: 0x00007f70e08e5800
+R14=0x00007f70bcf15580 is pointing into the stack for thread: 0x00007f70e08e5800
+R15=0xfffffffffffffffc is an unknown value
+
+
+Stack: [0x00007f70bce16000,0x00007f70bcf17000],  sp=0x00007f70bcf14e70,  free space=1019k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libscsynth.so+0x220dc]  SC_UdpInPort::SC_UdpInPort(World*, int)+0x9c
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  overtone.sc.machinery.server.native.lib_22e18bea_3d3f_4d32_b28f_3234548c6982.World_OpenUDP(Lcom/sun/jna/Pointer;I)I+0
+j  overtone.sc.machinery.server.native$eval4056$fn__4057.invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+15
+j  overtone.sc.machinery.server.native$scsynth_listen_udp.invokeStatic(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+55
+j  overtone.sc.machinery.server.native$scsynth_listen_udp.invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+6
+j  overtone.sc.machinery.server.connection$internal_booter.invokeStatic(Ljava/lang/Object;)Ljava/lang/Object;+201
+j  overtone.sc.machinery.server.connection$internal_booter.invoke(Ljava/lang/Object;)Ljava/lang/Object;+3
+j  overtone.sc.machinery.server.connection$boot_internal_server$fn__4149.invoke()Ljava/lang/Object;+13
+j  clojure.lang.AFn.run()V+1
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x00007f70e08e5800 JavaThread "Thread-11" daemon [_thread_in_native, id=1295, stack(0x00007f70bce16000,0x00007f70bcf17000)]
+  0x00007f70a8001000 JavaThread "pool-3-thread-10" [_thread_blocked, id=1294, stack(0x00007f70bda40000,0x00007f70bdb41000)]
+  0x00007f70c8028800 JavaThread "pool-3-thread-9" [_thread_blocked, id=1293, stack(0x00007f70bdf41000,0x00007f70be042000)]
+  0x00007f70b4001000 JavaThread "pool-3-thread-8" [_thread_blocked, id=1292, stack(0x00007f70be242000,0x00007f70be343000)]
+  0x00007f70e11a0000 JavaThread "pool-2-thread-10" [_thread_blocked, id=1291, stack(0x00007f70be543000,0x00007f70be644000)]
+  0x00007f70e1197800 JavaThread "pool-2-thread-9" [_thread_blocked, id=1290, stack(0x00007f70be644000,0x00007f70be745000)]
+  0x00007f70e1196000 JavaThread "pool-2-thread-8" [_thread_blocked, id=1289, stack(0x00007f70be745000,0x00007f70be846000)]
+  0x00007f70e118d800 JavaThread "pool-2-thread-7" [_thread_blocked, id=1288, stack(0x00007f70be846000,0x00007f70be947000)]
+  0x00007f70e118c800 JavaThread "pool-2-thread-6" [_thread_blocked, id=1287, stack(0x00007f70be947000,0x00007f70bea48000)]
+  0x00007f70e117c800 JavaThread "pool-2-thread-5" [_thread_blocked, id=1286, stack(0x00007f70bea48000,0x00007f70beb49000)]
+  0x00007f70e116a000 JavaThread "pool-2-thread-4" [_thread_blocked, id=1285, stack(0x00007f70beb49000,0x00007f70bec4a000)]
+  0x00007f70e1169800 JavaThread "pool-2-thread-3" [_thread_blocked, id=1284, stack(0x00007f70bec4a000,0x00007f70bed4b000)]
+  0x00007f70b8003000 JavaThread "pool-3-thread-7" [_thread_blocked, id=1283, stack(0x00007f70bed4b000,0x00007f70bee4c000)]
+  0x00007f70e1174800 JavaThread "pool-2-thread-2" [_thread_blocked, id=1282, stack(0x00007f70bee4c000,0x00007f70bef4d000)]
+  0x00007f70e116c800 JavaThread "pool-2-thread-1" [_thread_blocked, id=1281, stack(0x00007f70bef4d000,0x00007f70bf04e000)]
+  0x00007f70b0001000 JavaThread "pool-3-thread-6" [_thread_blocked, id=1280, stack(0x00007f70bf24e000,0x00007f70bf34f000)]
+  0x00007f70c8027800 JavaThread "pool-3-thread-5" [_thread_blocked, id=1279, stack(0x00007f70bf54f000,0x00007f70bf650000)]
+  0x00007f70b8001000 JavaThread "pool-3-thread-4" [_thread_blocked, id=1278, stack(0x00007f70bf650000,0x00007f70bf751000)]
+  0x00007f70c8027000 JavaThread "pool-3-thread-3" [_thread_blocked, id=1277, stack(0x00007f70bf751000,0x00007f70bf852000)]
+  0x00007f70c8020000 JavaThread "pool-3-thread-2" [_thread_blocked, id=1276, stack(0x00007f70fc007000,0x00007f70fc108000)]
+  0x00007f70e0c52800 JavaThread "pool-3-thread-1" [_thread_blocked, id=1275, stack(0x00007f70feac9000,0x00007f70febca000)]
+  0x00007f70e0561000 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=1274, stack(0x00007f70fefce000,0x00007f70ff0cf000)]
+  0x00007f70e054c000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=1273, stack(0x00007f70ff3fa000,0x00007f70ff4fb000)]
+  0x00007f70d8004800 JavaThread "nREPL-worker-1" daemon [_thread_blocked, id=1272, stack(0x00007f70ff2e6000,0x00007f70ff3e7000)]
+  0x00007f70cc003000 JavaThread "clojure-agent-send-off-pool-7" [_thread_blocked, id=1271, stack(0x00007f70feecd000,0x00007f70fefce000)]
+  0x00007f70cc001000 JavaThread "clojure-agent-send-off-pool-6" [_thread_in_native, id=1198, stack(0x00007f70febca000,0x00007f70feccb000)]
+  0x00007f70d4004000 JavaThread "clojure-agent-send-off-pool-5" [_thread_in_native, id=1197, stack(0x00007f70feccb000,0x00007f70fedcc000)]
+  0x00007f70d4003800 JavaThread "clojure-agent-send-off-pool-4" [_thread_blocked, id=1196, stack(0x00007f70fedcc000,0x00007f70feecd000)]
+  0x00007f71440d1800 JavaThread "Service Thread" daemon [_thread_blocked, id=1187, stack(0x00007f70ffbfc000,0x00007f70ffcfd000)]
+  0x00007f71440c6800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=1186, stack(0x00007f70ffcfd000,0x00007f70ffdfe000)]
+  0x00007f71440c4800 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=1185, stack(0x00007f70ffdfe000,0x00007f70ffeff000)]
+  0x00007f71440c2800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=1184, stack(0x00007f70ffeff000,0x00007f7100000000)]
+  0x00007f71440c0000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=1183, stack(0x00007f711405e000,0x00007f711415f000)]
+  0x00007f71440be800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1182, stack(0x00007f711415f000,0x00007f7114260000)]
+  0x00007f714408b800 JavaThread "Finalizer" daemon [_thread_blocked, id=1181, stack(0x00007f71341b0000,0x00007f71342b1000)]
+  0x00007f7144086800 JavaThread "Reference Handler" daemon [_thread_blocked, id=1180, stack(0x00007f71342b1000,0x00007f71343b2000)]
+  0x00007f7144009000 JavaThread "main" [_thread_blocked, id=1170, stack(0x00007f714daa4000,0x00007f714dba5000)]
+
+Other Threads:
+  0x00007f714407f000 VMThread [stack: 0x00007f71343b2000,0x00007f71344b3000] [id=1179]
+  0x00007f71440d4000 WatcherThread [stack: 0x00007f70ffafb000,0x00007f70ffbfc000] [id=1188]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 529408K, used 504807K [0x00000000d6f00000, 0x00000000fff00000, 0x0000000100000000)
+  eden space 517632K, 96% used [0x00000000d6f00000,0x00000000f5615f40,0x00000000f6880000)
+  from space 11776K, 51% used [0x00000000f6880000,0x00000000f6e64020,0x00000000f7400000)
+  to   space 11264K, 0% used [0x00000000ff400000,0x00000000ff400000,0x00000000fff00000)
+ ParOldGen       total 74240K, used 27474K [0x0000000084c00000, 0x0000000089480000, 0x00000000d6f00000)
+  object space 74240K, 37% used [0x0000000084c00000,0x00000000866d4990,0x0000000089480000)
+ Metaspace       used 41438K, capacity 55175K, committed 55296K, reserved 1089536K
+  class space    used 10465K, capacity 15089K, committed 15104K, reserved 1048576K
+
+Card table byte_map: [0x00007f714a9bc000,0x00007f714ad97000] byte_map_base: 0x00007f714a596000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f714cdb6260
+ Begin Bits: [0x00007f7114260000, 0x00007f7116130000)
+ End Bits:   [0x00007f7116130000, 0x00007f7118000000)
+
+Polling page: 0x00007f714dbd5000
+
+CodeCache: size=245760Kb used=16882Kb max_used=18096Kb free=228877Kb
+ bounds [0x00007f7135000000, 0x00007f71361d0000, 0x00007f7144000000]
+ total_blobs=4015 nmethods=3504 adapters=425
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 147.170 Thread 0x00007f71440c6800 4510       3       java.lang.Double::doubleValue (5 bytes)
+Event: 147.170 Thread 0x00007f71440c6800 nmethod 4510 0x00007f71352aaf10 code [0x00007f71352ab060, 0x00007f71352ab1b0]
+Event: 149.567 Thread 0x00007f71440c6800 4511       3       java.util.concurrent.ThreadPoolExecutor::runStateOf (5 bytes)
+Event: 149.567 Thread 0x00007f71440c6800 nmethod 4511 0x00007f7135433e50 code [0x00007f7135433fa0, 0x00007f71354340d0]
+Event: 150.274 Thread 0x00007f71440c6800 4512       3       clojure.core$coll_QMARK_::invokeStatic (19 bytes)
+Event: 150.274 Thread 0x00007f71440c6800 nmethod 4512 0x00007f71354be0d0 code [0x00007f71354be240, 0x00007f71354be4f0]
+Event: 152.067 Thread 0x00007f71440c6800 4513       3       java.util.concurrent.locks.AbstractQueuedSynchronizer::compareAndSetWaitStatus (13 bytes)
+Event: 152.067 Thread 0x00007f71440c6800 nmethod 4513 0x00007f71356fdc10 code [0x00007f71356fdd60, 0x00007f71356fdeb0]
+Event: 153.029 Thread 0x00007f71440c6800 4514       3       clojure.lang.Numbers$BigIntOps::combine (8 bytes)
+Event: 153.030 Thread 0x00007f71440c6800 nmethod 4514 0x00007f71353f4650 code [0x00007f71353f47c0, 0x00007f71353f49e8]
+
+GC Heap History (10 events):
+Event: 141.949 GC heap before
+{Heap before GC invocations=11 (full 1):
+ PSYoungGen      total 259584K, used 35014K [0x00000000d6f00000, 0x00000000f0580000, 0x0000000100000000)
+  eden space 247808K, 10% used [0x00000000d6f00000,0x00000000d88cf720,0x00000000e6100000)
+  from space 11776K, 72% used [0x00000000e6100000,0x00000000e6962210,0x00000000e6c80000)
+  to   space 11776K, 0% used [0x00000000efa00000,0x00000000efa00000,0x00000000f0580000)
+ ParOldGen       total 51712K, used 14707K [0x0000000084c00000, 0x0000000087e80000, 0x00000000d6f00000)
+  object space 51712K, 28% used [0x0000000084c00000,0x0000000085a5cf08,0x0000000087e80000)
+ Metaspace       used 29279K, capacity 35405K, committed 35496K, reserved 1075200K
+  class space    used 6942K, capacity 9216K, committed 9216K, reserved 1048576K
+Event: 141.958 GC heap after
+Heap after GC invocations=11 (full 1):
+ PSYoungGen      total 404480K, used 5666K [0x00000000d6f00000, 0x00000000f0880000, 0x0000000100000000)
+  eden space 392704K, 0% used [0x00000000d6f00000,0x00000000d6f00000,0x00000000eee80000)
+  from space 11776K, 48% used [0x00000000efa00000,0x00000000eff88968,0x00000000f0580000)
+  to   space 11776K, 0% used [0x00000000eee80000,0x00000000eee80000,0x00000000efa00000)
+ ParOldGen       total 51712K, used 17413K [0x0000000084c00000, 0x0000000087e80000, 0x00000000d6f00000)
+  object space 51712K, 33% used [0x0000000084c00000,0x0000000085d01518,0x0000000087e80000)
+ Metaspace       used 29279K, capacity 35405K, committed 35496K, reserved 1075200K
+  class space    used 6942K, capacity 9216K, committed 9216K, reserved 1048576K
+}
+Event: 141.958 GC heap before
+{Heap before GC invocations=12 (full 2):
+ PSYoungGen      total 404480K, used 5666K [0x00000000d6f00000, 0x00000000f0880000, 0x0000000100000000)
+  eden space 392704K, 0% used [0x00000000d6f00000,0x00000000d6f00000,0x00000000eee80000)
+  from space 11776K, 48% used [0x00000000efa00000,0x00000000eff88968,0x00000000f0580000)
+  to   space 11776K, 0% used [0x00000000eee80000,0x00000000eee80000,0x00000000efa00000)
+ ParOldGen       total 51712K, used 17413K [0x0000000084c00000, 0x0000000087e80000, 0x00000000d6f00000)
+  object space 51712K, 33% used [0x0000000084c00000,0x0000000085d01518,0x0000000087e80000)
+ Metaspace       used 29279K, capacity 35405K, committed 35496K, reserved 1075200K
+  class space    used 6942K, capacity 9216K, committed 9216K, reserved 1048576K
+Event: 142.126 GC heap after
+Heap after GC invocations=12 (full 2):
+ PSYoungGen      total 404480K, used 0K [0x00000000d6f00000, 0x00000000f0880000, 0x0000000100000000)
+  eden space 392704K, 0% used [0x00000000d6f00000,0x00000000d6f00000,0x00000000eee80000)
+  from space 11776K, 0% used [0x00000000efa00000,0x00000000efa00000,0x00000000f0580000)
+  to   space 11776K, 0% used [0x00000000eee80000,0x00000000eee80000,0x00000000efa00000)
+ ParOldGen       total 74240K, used 22635K [0x0000000084c00000, 0x0000000089480000, 0x00000000d6f00000)
+  object space 74240K, 30% used [0x0000000084c00000,0x000000008621ad30,0x0000000089480000)
+ Metaspace       used 29279K, capacity 35405K, committed 35496K, reserved 1075200K
+  class space    used 6942K, capacity 9216K, committed 9216K, reserved 1048576K
+}
+Event: 142.474 GC heap before
+{Heap before GC invocations=13 (full 2):
+ PSYoungGen      total 404480K, used 392704K [0x00000000d6f00000, 0x00000000f0880000, 0x0000000100000000)
+  eden space 392704K, 100% used [0x00000000d6f00000,0x00000000eee80000,0x00000000eee80000)
+  from space 11776K, 0% used [0x00000000efa00000,0x00000000efa00000,0x00000000f0580000)
+  to   space 11776K, 0% used [0x00000000eee80000,0x00000000eee80000,0x00000000efa00000)
+ ParOldGen       total 74240K, used 22635K [0x0000000084c00000, 0x0000000089480000, 0x00000000d6f00000)
+  object space 74240K, 30% used [0x0000000084c00000,0x000000008621ad30,0x0000000089480000)
+ Metaspace       used 29786K, capacity 35991K, committed 36096K, reserved 1075200K
+  class space    used 7063K, capacity 9374K, committed 9472K, reserved 1048576K
+Event: 142.483 GC heap after
+Heap after GC invocations=13 (full 2):
+ PSYoungGen      total 404480K, used 1924K [0x00000000d6f00000, 0x00000000f7f80000, 0x0000000100000000)
+  eden space 392704K, 0% used [0x00000000d6f00000,0x00000000d6f00000,0x00000000eee80000)
+  from space 11776K, 16% used [0x00000000eee80000,0x00000000ef061170,0x00000000efa00000)
+  to   space 11776K, 0% used [0x00000000f7400000,0x00000000f7400000,0x00000000f7f80000)
+ ParOldGen       total 74240K, used 22643K [0x0000000084c00000, 0x0000000089480000, 0x00000000d6f00000)
+  object space 74240K, 30% used [0x0000000084c00000,0x000000008621cd30,0x0000000089480000)
+ Metaspace       used 29786K, capacity 35991K, committed 36096K, reserved 1075200K
+  class space    used 7063K, capacity 9374K, committed 9472K, reserved 1048576K
+}
+Event: 142.844 GC heap before
+{Heap before GC invocations=14 (full 2):
+ PSYoungGen      total 404480K, used 394628K [0x00000000d6f00000, 0x00000000f7f80000, 0x0000000100000000)
+  eden space 392704K, 100% used [0x00000000d6f00000,0x00000000eee80000,0x00000000eee80000)
+  from space 11776K, 16% used [0x00000000eee80000,0x00000000ef061170,0x00000000efa00000)
+  to   space 11776K, 0% used [0x00000000f7400000,0x00000000f7400000,0x00000000f7f80000)
+ ParOldGen       total 74240K, used 22643K [0x0000000084c00000, 0x0000000089480000, 0x00000000d6f00000)
+  object space 74240K, 30% used [0x0000000084c00000,0x000000008621cd30,0x0000000089480000)
+ Metaspace       used 30390K, capacity 37133K, committed 37376K, reserved 1077248K
+  class space    used 7250K, capacity 9676K, committed 9728K, reserved 1048576K
+Event: 142.858 GC heap after
+Heap after GC invocations=14 (full 2):
+ PSYoungGen      total 529408K, used 3280K [0x00000000d6f00000, 0x00000000f8180000, 0x0000000100000000)
+  eden space 517632K, 0% used [0x00000000d6f00000,0x00000000d6f00000,0x00000000f6880000)
+  from space 11776K, 27% used [0x00000000f7400000,0x00000000f7734010,0x00000000f7f80000)
+  to   space 11776K, 0% used [0x00000000f6880000,0x00000000f6880000,0x00000000f7400000)
+ ParOldGen       total 74240K, used 24396K [0x0000000084c00000, 0x0000000089480000, 0x00000000d6f00000)
+  object space 74240K, 32% used [0x0000000084c00000,0x00000000863d3108,0x0000000089480000)
+ Metaspace       used 30390K, capacity 37133K, committed 37376K, reserved 1077248K
+  class space    used 7250K, capacity 9676K, committed 9728K, reserved 1048576K
+}
+Event: 144.146 GC heap before
+{Heap before GC invocations=15 (full 2):
+ PSYoungGen      total 529408K, used 520912K [0x00000000d6f00000, 0x00000000f8180000, 0x0000000100000000)
+  eden space 517632K, 100% used [0x00000000d6f00000,0x00000000f6880000,0x00000000f6880000)
+  from space 11776K, 27% used [0x00000000f7400000,0x00000000f7734010,0x00000000f7f80000)
+  to   space 11776K, 0% used [0x00000000f6880000,0x00000000f6880000,0x00000000f7400000)
+ ParOldGen       total 74240K, used 24396K [0x0000000084c00000, 0x0000000089480000, 0x00000000d6f00000)
+  object space 74240K, 32% used [0x0000000084c00000,0x00000000863d3108,0x0000000089480000)
+ Metaspace       used 34618K, capacity 43649K, committed 43904K, reserved 1081344K
+  class space    used 8452K, capacity 11556K, committed 11648K, reserved 1048576K
+Event: 144.155 GC heap after
+Heap after GC invocations=15 (full 2):
+ PSYoungGen      total 529408K, used 6032K [0x00000000d6f00000, 0x00000000fff00000, 0x0000000100000000)
+  eden space 517632K, 0% used [0x00000000d6f00000,0x00000000d6f00000,0x00000000f6880000)
+  from space 11776K, 51% used [0x00000000f6880000,0x00000000f6e64020,0x00000000f7400000)
+  to   space 11264K, 0% used [0x00000000ff400000,0x00000000ff400000,0x00000000fff00000)
+ ParOldGen       total 74240K, used 27474K [0x0000000084c00000, 0x0000000089480000, 0x00000000d6f00000)
+  object space 74240K, 37% used [0x0000000084c00000,0x00000000866d4990,0x0000000089480000)
+ Metaspace       used 34618K, capacity 43649K, committed 43904K, reserved 1081344K
+  class space    used 8452K, capacity 11556K, committed 11648K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 145.798 Thread 0x00007f70d8004800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f713513fcb4 method=clojure.lang.PersistentHashMap$TransientHashMap.doAssoc(Ljava/lang/Object;Ljava/lang/Object;)Lclojure/lang/ITransientMap; @ 1
+Event: 145.812 Thread 0x00007f70d8004800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f713591ce9c method=clojure.lang.Compiler.lookupVar(Lclojure/lang/Symbol;ZZ)Lclojure/lang/Var; @ 90
+Event: 145.927 Thread 0x00007f70d8004800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f71360f4ba0 method=clojure.lang.RT.seqFrom(Ljava/lang/Object;)Lclojure/lang/ISeq; @ 31
+Event: 145.927 Thread 0x00007f70d8004800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f7135898864 method=clojure.lang.RT.seqFrom(Ljava/lang/Object;)Lclojure/lang/ISeq; @ 31
+Event: 145.927 Thread 0x00007f70d8004800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f7135982ad4 method=clojure.lang.RT.seqFrom(Ljava/lang/Object;)Lclojure/lang/ISeq; @ 31
+Event: 145.966 Thread 0x00007f70d8004800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f7135b1bebc method=clojure.lang.Numbers$LongOps.combine(Lclojure/lang/Numbers$Ops;)Lclojure/lang/Numbers$Ops; @ 2
+Event: 145.966 Thread 0x00007f70d8004800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f713530e920 method=clojure.lang.RT.longCast(Ljava/lang/Object;)J @ 8
+Event: 145.968 Thread 0x00007f70d8004800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f7135b1bebc method=clojure.lang.Numbers$LongOps.combine(Lclojure/lang/Numbers$Ops;)Lclojure/lang/Numbers$Ops; @ 2
+Event: 145.968 Thread 0x00007f70d8004800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f7135748c30 method=clojure.lang.RT.longCast(Ljava/lang/Object;)J @ 8
+Event: 146.068 Thread 0x00007f70d8004800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f7135b1bebc method=clojure.lang.Numbers$LongOps.combine(Lclojure/lang/Numbers$Ops;)Lclojure/lang/Numbers$Ops; @ 2
+
+Internal exceptions (10 events):
+Event: 140.863 Thread 0x00007f70d8004800 Implicit null exception at 0x00007f7135beb19e to 0x00007f7135bf4cc1
+Event: 140.899 Thread 0x00007f70d8004800 Implicit null exception at 0x00007f7135186476 to 0x00007f7135186831
+Event: 142.986 Thread 0x00007f70d8004800 Implicit null exception at 0x00007f7135efc4ce to 0x00007f7135efe276
+Event: 143.153 Thread 0x00007f70d8004800 Implicit null exception at 0x00007f71353ce936 to 0x00007f71353ce985
+Event: 143.514 Thread 0x00007f70d8004800 Implicit null exception at 0x00007f7135d9b2ac to 0x00007f7135d9b37d
+Event: 143.514 Thread 0x00007f70d8004800 Implicit null exception at 0x00007f7135d9b70f to 0x00007f7135d9b7e1
+Event: 143.515 Thread 0x00007f70d8004800 Implicit null exception at 0x00007f7135e1b48f to 0x00007f7135e1b561
+Event: 145.738 Thread 0x00007f70d8004800 Implicit null exception at 0x00007f713590cd04 to 0x00007f713590cddd
+Event: 145.781 Thread 0x00007f70d8004800 Implicit null exception at 0x00007f713516f4fa to 0x00007f713516f715
+Event: 145.798 Thread 0x00007f70d8004800 Implicit null exception at 0x00007f713513f47c to 0x00007f713513fc85
+
+Events (10 events):
+Event: 146.139 Thread 0x00007f71440c6800 flushing nmethod 0x00007f71355e7b90
+Event: 146.140 Thread 0x00007f71440c6800 flushing nmethod 0x00007f71355ff010
+Event: 147.171 Thread 0x00007f71440c6800 flushing nmethod 0x00007f7135707f10
+Event: 147.171 Thread 0x00007f71440c6800 flushing nmethod 0x00007f7135712990
+Event: 147.171 Thread 0x00007f71440c6800 flushing nmethod 0x00007f7135762250
+Event: 150.275 Thread 0x00007f71440c6800 flushing nmethod 0x00007f713590e910
+Event: 152.067 Thread 0x00007f71440c6800 flushing nmethod 0x00007f7135a4df50
+Event: 152.068 Thread 0x00007f71440c6800 flushing nmethod 0x00007f7135a78010
+Event: 152.068 Thread 0x00007f71440c6800 flushing nmethod 0x00007f7135b006d0
+Event: 153.030 Thread 0x00007f71440c6800 flushing nmethod 0x00007f7135b6ca90
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:01 22943982                           /usr/lib/jvm/java-8-openjdk/jre/bin/java
+00600000-00601000 r--p 00000000 08:01 22943982                           /usr/lib/jvm/java-8-openjdk/jre/bin/java
+00601000-00602000 rw-p 00001000 08:01 22943982                           /usr/lib/jvm/java-8-openjdk/jre/bin/java
+0147f000-014a0000 rw-p 00000000 00:00 0                                  [heap]
+84c00000-89480000 rw-p 00000000 00:00 0 
+89480000-d6f00000 ---p 00000000 00:00 0 
+d6f00000-fff00000 rw-p 00000000 00:00 0 
+fff00000-100000000 ---p 00000000 00:00 0 
+100000000-100ec0000 rw-p 00000000 00:00 0 
+100ec0000-140000000 ---p 00000000 00:00 0 
+7f703c000000-7f703c021000 rw-p 00000000 00:00 0 
+7f703c021000-7f7040000000 ---p 00000000 00:00 0 
+7f7043fff000-7f7054000000 rw-p 00000000 00:00 0 
+7f7054000000-7f7054022000 rw-p 00000000 00:00 0 
+7f7054022000-7f7058000000 ---p 00000000 00:00 0 
+7f7059510000-7f7059511000 ---p 00000000 00:00 0 
+7f7059511000-7f7059d11000 rw-p 00000000 00:00 0 
+7f7059d11000-7f7059d12000 ---p 00000000 00:00 0 
+7f7059d12000-7f705a512000 rw-p 00000000 00:00 0 
+7f705a512000-7f705a51e000 r-xp 00000000 08:01 19529916                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DemandUGens.so
+7f705a51e000-7f705a71e000 ---p 0000c000 08:01 19529916                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DemandUGens.so
+7f705a71e000-7f705a71f000 r--p 0000c000 08:01 19529916                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DemandUGens.so
+7f705a71f000-7f705a720000 rw-p 0000d000 08:01 19529916                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DemandUGens.so
+7f705a720000-7f705a736000 r-xp 00000000 08:01 19529765                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobFilt.so
+7f705a736000-7f705a935000 ---p 00016000 08:01 19529765                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobFilt.so
+7f705a935000-7f705a936000 r--p 00015000 08:01 19529765                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobFilt.so
+7f705a936000-7f705a937000 rw-p 00016000 08:01 19529765                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobFilt.so
+7f705a937000-7f705a939000 r-xp 00000000 08:01 19529784                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f705a939000-7f705ab38000 ---p 00002000 08:01 19529784                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f705ab38000-7f705ab39000 r--p 00001000 08:01 19529784                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f705ab39000-7f705ab3a000 rw-p 00002000 08:01 19529784                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f705ab3a000-7f705ab4c000 r-xp 00000000 08:01 19529761                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BerlachUGens.so
+7f705ab4c000-7f705ad4b000 ---p 00012000 08:01 19529761                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BerlachUGens.so
+7f705ad4b000-7f705ad4c000 r--p 00011000 08:01 19529761                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BerlachUGens.so
+7f705ad4c000-7f705ad4d000 rw-p 00012000 08:01 19529761                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BerlachUGens.so
+7f705ad4d000-7f705ad55000 r-xp 00000000 08:01 19529801                   /home/chad/beatboxchad_live/target/native/linux/x86_64/VBAP.so
+7f705ad55000-7f705af54000 ---p 00008000 08:01 19529801                   /home/chad/beatboxchad_live/target/native/linux/x86_64/VBAP.so
+7f705af54000-7f705af55000 r--p 00007000 08:01 19529801                   /home/chad/beatboxchad_live/target/native/linux/x86_64/VBAP.so
+7f705af55000-7f705af56000 rw-p 00008000 08:01 19529801                   /home/chad/beatboxchad_live/target/native/linux/x86_64/VBAP.so
+7f705af56000-7f705af5a000 r-xp 00000000 08:01 19529752                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AmbisonicUGens.so
+7f705af5a000-7f705b15a000 ---p 00004000 08:01 19529752                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AmbisonicUGens.so
+7f705b15a000-7f705b15b000 r--p 00004000 08:01 19529752                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AmbisonicUGens.so
+7f705b15b000-7f705b15c000 rw-p 00005000 08:01 19529752                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AmbisonicUGens.so
+7f705b15c000-7f705b162000 r-xp 00000000 08:01 19529935                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ReverbUGens.so
+7f705b162000-7f705b361000 ---p 00006000 08:01 19529935                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ReverbUGens.so
+7f705b361000-7f705b362000 r--p 00005000 08:01 19529935                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ReverbUGens.so
+7f705b362000-7f705b363000 rw-p 00006000 08:01 19529935                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ReverbUGens.so
+7f705b363000-7f705b376000 r-xp 00000000 08:01 19529774                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshPVUGens.so
+7f705b376000-7f705b575000 ---p 00013000 08:01 19529774                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshPVUGens.so
+7f705b575000-7f705b576000 r--p 00012000 08:01 19529774                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshPVUGens.so
+7f705b576000-7f705b577000 rw-p 00013000 08:01 19529774                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshPVUGens.so
+7f705b577000-7f705b583000 rw-p 00000000 00:00 0 
+7f705b583000-7f705b593000 r-xp 00000000 08:01 19529772                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshAmbiUGens.so
+7f705b593000-7f705b792000 ---p 00010000 08:01 19529772                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshAmbiUGens.so
+7f705b792000-7f705b793000 r--p 0000f000 08:01 19529772                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshAmbiUGens.so
+7f705b793000-7f705b794000 rw-p 00010000 08:01 19529772                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshAmbiUGens.so
+7f705b794000-7f705b797000 r-xp 00000000 08:01 19529798                   /home/chad/beatboxchad_live/target/native/linux/x86_64/SummerUGens.so
+7f705b797000-7f705b997000 ---p 00003000 08:01 19529798                   /home/chad/beatboxchad_live/target/native/linux/x86_64/SummerUGens.so
+7f705b997000-7f705b998000 r--p 00003000 08:01 19529798                   /home/chad/beatboxchad_live/target/native/linux/x86_64/SummerUGens.so
+7f705b998000-7f705b999000 rw-p 00004000 08:01 19529798                   /home/chad/beatboxchad_live/target/native/linux/x86_64/SummerUGens.so
+7f705b999000-7f705b9a6000 r-xp 00000000 08:01 19529792                   /home/chad/beatboxchad_live/target/native/linux/x86_64/NCAnalysisUGens.so
+7f705b9a6000-7f705bba5000 ---p 0000d000 08:01 19529792                   /home/chad/beatboxchad_live/target/native/linux/x86_64/NCAnalysisUGens.so
+7f705bba5000-7f705bba6000 r--p 0000c000 08:01 19529792                   /home/chad/beatboxchad_live/target/native/linux/x86_64/NCAnalysisUGens.so
+7f705bba6000-7f705bba7000 rw-p 0000d000 08:01 19529792                   /home/chad/beatboxchad_live/target/native/linux/x86_64/NCAnalysisUGens.so
+7f705bba7000-7f705bbf2000 rw-p 00000000 00:00 0 
+7f705bbf2000-7f705bbfa000 r-xp 00000000 08:01 19529800                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TJUGens.so
+7f705bbfa000-7f705bdf9000 ---p 00008000 08:01 19529800                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TJUGens.so
+7f705bdf9000-7f705bdfa000 r--p 00007000 08:01 19529800                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TJUGens.so
+7f705bdfa000-7f705bdfb000 rw-p 00008000 08:01 19529800                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TJUGens.so
+7f705bdfb000-7f705bdff000 r-xp 00000000 08:01 19529799                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TagSystemUgens.so
+7f705bdff000-7f705bffe000 ---p 00004000 08:01 19529799                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TagSystemUgens.so
+7f705bffe000-7f705bfff000 r--p 00003000 08:01 19529799                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TagSystemUgens.so
+7f705bfff000-7f705c000000 rw-p 00004000 08:01 19529799                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TagSystemUgens.so
+7f705c000000-7f705c021000 rw-p 00000000 00:00 0 
+7f705c021000-7f7060000000 ---p 00000000 00:00 0 
+7f70600f7000-7f70600f9000 r-xp 00000000 08:01 19529781                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f70600f9000-7f70602f8000 ---p 00002000 08:01 19529781                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f70602f8000-7f70602f9000 r--p 00001000 08:01 19529781                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f70602f9000-7f70602fa000 rw-p 00002000 08:01 19529781                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f70602fa000-7f70602fc000 r-xp 00000000 08:01 19529936                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TestUGens.so
+7f70602fc000-7f70604fb000 ---p 00002000 08:01 19529936                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TestUGens.so
+7f70604fb000-7f70604fc000 r--p 00001000 08:01 19529936                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TestUGens.so
+7f70604fc000-7f70604fd000 rw-p 00002000 08:01 19529936                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TestUGens.so
+7f70604fd000-7f7060502000 r-xp 00000000 08:01 19529780                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDChaosUGens.so
+7f7060502000-7f7060701000 ---p 00005000 08:01 19529780                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDChaosUGens.so
+7f7060701000-7f7060702000 r--p 00004000 08:01 19529780                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDChaosUGens.so
+7f7060702000-7f7060703000 rw-p 00005000 08:01 19529780                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDChaosUGens.so
+7f7060703000-7f7060704000 ---p 00000000 00:00 0 
+7f7060704000-7f7060f04000 rw-p 00000000 00:00 0 
+7f7060f04000-7f7060f07000 r-xp 00000000 08:01 19529917                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DiskIO_UGens.so
+7f7060f07000-7f7061107000 ---p 00003000 08:01 19529917                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DiskIO_UGens.so
+7f7061107000-7f7061108000 r--p 00003000 08:01 19529917                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DiskIO_UGens.so
+7f7061108000-7f7061109000 rw-p 00004000 08:01 19529917                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DiskIO_UGens.so
+7f7061109000-7f706110a000 rw-p 00000000 00:00 0 
+7f706110a000-7f706110f000 r-xp 00000000 08:01 19529769                   /home/chad/beatboxchad_live/target/native/linux/x86_64/Concat.so
+7f706110f000-7f706130e000 ---p 00005000 08:01 19529769                   /home/chad/beatboxchad_live/target/native/linux/x86_64/Concat.so
+7f706130e000-7f706130f000 r--p 00004000 08:01 19529769                   /home/chad/beatboxchad_live/target/native/linux/x86_64/Concat.so
+7f706130f000-7f7061310000 rw-p 00005000 08:01 19529769                   /home/chad/beatboxchad_live/target/native/linux/x86_64/Concat.so
+7f7061310000-7f7061313000 r-xp 00000000 08:01 19529770                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DistortionUGens.so
+7f7061313000-7f7061512000 ---p 00003000 08:01 19529770                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DistortionUGens.so
+7f7061512000-7f7061513000 r--p 00002000 08:01 19529770                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DistortionUGens.so
+7f7061513000-7f7061514000 rw-p 00003000 08:01 19529770                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DistortionUGens.so
+7f7061514000-7f7061519000 r-xp 00000000 08:01 19529764                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobFFT.so
+7f7061519000-7f7061718000 ---p 00005000 08:01 19529764                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobFFT.so
+7f7061718000-7f7061719000 r--p 00004000 08:01 19529764                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobFFT.so
+7f7061719000-7f706171a000 rw-p 00005000 08:01 19529764                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobFFT.so
+7f706171a000-7f7061726000 rw-p 00000000 00:00 0 
+7f7061726000-7f706172a000 r-xp 00000000 08:01 19529787                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDSOMUGens.so
+7f706172a000-7f7061929000 ---p 00004000 08:01 19529787                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDSOMUGens.so
+7f7061929000-7f706192a000 r--p 00003000 08:01 19529787                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDSOMUGens.so
+7f706192a000-7f706192b000 rw-p 00004000 08:01 19529787                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDSOMUGens.so
+7f706192b000-7f7061931000 r-xp 00000000 08:01 19529923                   /home/chad/beatboxchad_live/target/native/linux/x86_64/IOUGens.so
+7f7061931000-7f7061b31000 ---p 00006000 08:01 19529923                   /home/chad/beatboxchad_live/target/native/linux/x86_64/IOUGens.so
+7f7061b31000-7f7061b32000 r--p 00006000 08:01 19529923                   /home/chad/beatboxchad_live/target/native/linux/x86_64/IOUGens.so
+7f7061b32000-7f7061b33000 rw-p 00007000 08:01 19529923                   /home/chad/beatboxchad_live/target/native/linux/x86_64/IOUGens.so
+7f7061b33000-7f7061b35000 r-xp 00000000 08:01 19529939                   /home/chad/beatboxchad_live/target/native/linux/x86_64/UnpackFFTUGens.so
+7f7061b35000-7f7061d34000 ---p 00002000 08:01 19529939                   /home/chad/beatboxchad_live/target/native/linux/x86_64/UnpackFFTUGens.so
+7f7061d34000-7f7061d35000 r--p 00001000 08:01 19529939                   /home/chad/beatboxchad_live/target/native/linux/x86_64/UnpackFFTUGens.so
+7f7061d35000-7f7061d36000 rw-p 00002000 08:01 19529939                   /home/chad/beatboxchad_live/target/native/linux/x86_64/UnpackFFTUGens.so
+7f7061d36000-7f7061d42000 rw-p 00000000 00:00 0 
+7f7061d42000-7f7061d48000 r-xp 00000000 08:01 19529930                   /home/chad/beatboxchad_live/target/native/linux/x86_64/NoiseUGens.so
+7f7061d48000-7f7061f47000 ---p 00006000 08:01 19529930                   /home/chad/beatboxchad_live/target/native/linux/x86_64/NoiseUGens.so
+7f7061f47000-7f7061f48000 r--p 00005000 08:01 19529930                   /home/chad/beatboxchad_live/target/native/linux/x86_64/NoiseUGens.so
+7f7061f48000-7f7061f49000 rw-p 00006000 08:01 19529930                   /home/chad/beatboxchad_live/target/native/linux/x86_64/NoiseUGens.so
+7f7061f49000-7f7061f4c000 r-xp 00000000 08:01 19529771                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GlitchUGens.so
+7f7061f4c000-7f706214b000 ---p 00003000 08:01 19529771                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GlitchUGens.so
+7f706214b000-7f706214c000 r--p 00002000 08:01 19529771                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GlitchUGens.so
+7f706214c000-7f706214d000 rw-p 00003000 08:01 19529771                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GlitchUGens.so
+7f706214d000-7f7062154000 r-xp 00000000 08:01 19529762                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BetablockerUGens.so
+7f7062154000-7f7062353000 ---p 00007000 08:01 19529762                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BetablockerUGens.so
+7f7062353000-7f7062354000 r--p 00006000 08:01 19529762                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BetablockerUGens.so
+7f7062354000-7f7062355000 rw-p 00007000 08:01 19529762                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BetablockerUGens.so
+7f7062355000-7f706235b000 r-xp 00000000 08:01 19529767                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobNoise.so
+7f706235b000-7f706255a000 ---p 00006000 08:01 19529767                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobNoise.so
+7f706255a000-7f706255b000 r--p 00005000 08:01 19529767                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobNoise.so
+7f706255b000-7f706255c000 rw-p 00006000 08:01 19529767                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobNoise.so
+7f706255c000-7f7062560000 r-xp 00000000 08:01 19529754                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AY_UGen.so
+7f7062560000-7f706275f000 ---p 00004000 08:01 19529754                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AY_UGen.so
+7f706275f000-7f7062760000 r--p 00003000 08:01 19529754                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AY_UGen.so
+7f7062760000-7f7062761000 rw-p 00004000 08:01 19529754                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AY_UGen.so
+7f7062761000-7f7062763000 rw-p 00000000 00:00 0 
+7f7062763000-7f7062764000 ---p 00000000 00:00 0 
+7f7062764000-7f7062f64000 rw-p 00000000 00:00 0 
+7f7062f64000-7f7062f67000 r-xp 00000000 08:01 19529928                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MouseUGens.so
+7f7062f67000-7f7063166000 ---p 00003000 08:01 19529928                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MouseUGens.so
+7f7063166000-7f7063167000 r--p 00002000 08:01 19529928                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MouseUGens.so
+7f7063167000-7f7063168000 rw-p 00003000 08:01 19529928                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MouseUGens.so
+7f7063168000-7f706316b000 r-xp 00000000 08:01 19529802                   /home/chad/beatboxchad_live/target/native/linux/x86_64/VOSIM.so
+7f706316b000-7f706336a000 ---p 00003000 08:01 19529802                   /home/chad/beatboxchad_live/target/native/linux/x86_64/VOSIM.so
+7f706336a000-7f706336b000 r--p 00002000 08:01 19529802                   /home/chad/beatboxchad_live/target/native/linux/x86_64/VOSIM.so
+7f706336b000-7f706336c000 rw-p 00003000 08:01 19529802                   /home/chad/beatboxchad_live/target/native/linux/x86_64/VOSIM.so
+7f706336c000-7f7063374000 r-xp 00000000 08:01 19529795                   /home/chad/beatboxchad_live/target/native/linux/x86_64/RMEQSuite.so
+7f7063374000-7f7063573000 ---p 00008000 08:01 19529795                   /home/chad/beatboxchad_live/target/native/linux/x86_64/RMEQSuite.so
+7f7063573000-7f7063574000 r--p 00007000 08:01 19529795                   /home/chad/beatboxchad_live/target/native/linux/x86_64/RMEQSuite.so
+7f7063574000-7f7063575000 rw-p 00008000 08:01 19529795                   /home/chad/beatboxchad_live/target/native/linux/x86_64/RMEQSuite.so
+7f7063575000-7f706358d000 r-xp 00000000 08:01 19529922                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GrainUGens.so
+7f706358d000-7f706378c000 ---p 00018000 08:01 19529922                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GrainUGens.so
+7f706378c000-7f706378d000 r--p 00017000 08:01 19529922                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GrainUGens.so
+7f706378d000-7f706378e000 rw-p 00018000 08:01 19529922                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GrainUGens.so
+7f706378e000-7f7063791000 r-xp 00000000 08:01 19529779                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f7063791000-7f7063990000 ---p 00003000 08:01 19529779                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f7063990000-7f7063991000 r--p 00002000 08:01 19529779                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f7063991000-7f7063992000 rw-p 00003000 08:01 19529779                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f7063992000-7f706399e000 rw-p 00000000 00:00 0 
+7f706399e000-7f70639aa000 r-xp 00000000 08:01 19529937                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TriggerUGens.so
+7f70639aa000-7f7063ba9000 ---p 0000c000 08:01 19529937                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TriggerUGens.so
+7f7063ba9000-7f7063baa000 r--p 0000b000 08:01 19529937                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TriggerUGens.so
+7f7063baa000-7f7063bab000 rw-p 0000c000 08:01 19529937                   /home/chad/beatboxchad_live/target/native/linux/x86_64/TriggerUGens.so
+7f7063bab000-7f7063bd9000 r-xp 00000000 08:01 19529915                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DelayUGens.so
+7f7063bd9000-7f7063dd9000 ---p 0002e000 08:01 19529915                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DelayUGens.so
+7f7063dd9000-7f7063dda000 r--p 0002e000 08:01 19529915                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DelayUGens.so
+7f7063dda000-7f7063ddb000 rw-p 0002f000 08:01 19529915                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DelayUGens.so
+7f7063ddb000-7f7063ddc000 ---p 00000000 00:00 0 
+7f7063ddc000-7f70645dc000 rw-p 00000000 00:00 0 
+7f70645dc000-7f70645dd000 r-xp 00000000 08:01 19529924                   /home/chad/beatboxchad_live/target/native/linux/x86_64/KeyboardUGens.so
+7f70645dd000-7f70647dd000 ---p 00001000 08:01 19529924                   /home/chad/beatboxchad_live/target/native/linux/x86_64/KeyboardUGens.so
+7f70647dd000-7f70647de000 r--p 00001000 08:01 19529924                   /home/chad/beatboxchad_live/target/native/linux/x86_64/KeyboardUGens.so
+7f70647de000-7f70647df000 rw-p 00002000 08:01 19529924                   /home/chad/beatboxchad_live/target/native/linux/x86_64/KeyboardUGens.so
+7f70647df000-7f70647e4000 r-xp 00000000 08:01 22418145                   /usr/lib/ladspa/ZamAutoSat-ladspa.so
+7f70647e4000-7f70649e3000 ---p 00005000 08:01 22418145                   /usr/lib/ladspa/ZamAutoSat-ladspa.so
+7f70649e3000-7f70649e4000 r--p 00004000 08:01 22418145                   /usr/lib/ladspa/ZamAutoSat-ladspa.so
+7f70649e4000-7f70649e5000 rw-p 00005000 08:01 22418145                   /usr/lib/ladspa/ZamAutoSat-ladspa.so
+7f70649e5000-7f70649ed000 r-xp 00000000 08:01 22418144                   /usr/lib/ladspa/ZamEQ2-ladspa.so
+7f70649ed000-7f7064bec000 ---p 00008000 08:01 22418144                   /usr/lib/ladspa/ZamEQ2-ladspa.so
+7f7064bec000-7f7064bed000 r--p 00007000 08:01 22418144                   /usr/lib/ladspa/ZamEQ2-ladspa.so
+7f7064bed000-7f7064bee000 rw-p 00008000 08:01 22418144                   /usr/lib/ladspa/ZamEQ2-ladspa.so
+7f7064bee000-7f7064ddc000 r-xp 00000000 08:01 22418143                   /usr/lib/ladspa/ZamHeadX2-ladspa.so
+7f7064ddc000-7f7064fdb000 ---p 001ee000 08:01 22418143                   /usr/lib/ladspa/ZamHeadX2-ladspa.so
+7f7064fdb000-7f7064fdc000 r--p 001ed000 08:01 22418143                   /usr/lib/ladspa/ZamHeadX2-ladspa.so
+7f7064fdc000-7f7064fdd000 rw-p 001ee000 08:01 22418143                   /usr/lib/ladspa/ZamHeadX2-ladspa.so
+7f7064fdd000-7f7064fe3000 r-xp 00000000 08:01 22418142                   /usr/lib/ladspa/ZamGate-ladspa.so
+7f7064fe3000-7f70651e3000 ---p 00006000 08:01 22418142                   /usr/lib/ladspa/ZamGate-ladspa.so
+7f70651e3000-7f70651e4000 r--p 00006000 08:01 22418142                   /usr/lib/ladspa/ZamGate-ladspa.so
+7f70651e4000-7f70651e5000 rw-p 00007000 08:01 22418142                   /usr/lib/ladspa/ZamGate-ladspa.so
+7f70651e5000-7f70651eb000 r-xp 00000000 08:01 22418141                   /usr/lib/ladspa/ZamDelay-ladspa.so
+7f70651eb000-7f70653eb000 ---p 00006000 08:01 22418141                   /usr/lib/ladspa/ZamDelay-ladspa.so
+7f70653eb000-7f70653ec000 r--p 00006000 08:01 22418141                   /usr/lib/ladspa/ZamDelay-ladspa.so
+7f70653ec000-7f70653ed000 rw-p 00007000 08:01 22418141                   /usr/lib/ladspa/ZamDelay-ladspa.so
+7f70653ed000-7f70653f7000 r-xp 00000000 08:01 22418140                   /usr/lib/ladspa/ZaMultiCompX2-ladspa.so
+7f70653f7000-7f70655f6000 ---p 0000a000 08:01 22418140                   /usr/lib/ladspa/ZaMultiCompX2-ladspa.so
+7f70655f6000-7f70655f7000 r--p 00009000 08:01 22418140                   /usr/lib/ladspa/ZaMultiCompX2-ladspa.so
+7f70655f7000-7f70655f8000 rw-p 0000a000 08:01 22418140                   /usr/lib/ladspa/ZaMultiCompX2-ladspa.so
+7f70655f8000-7f70655fa000 r-xp 00000000 08:01 22421574                   /usr/lib/ladspa/sine.so
+7f70655fa000-7f70657fa000 ---p 00002000 08:01 22421574                   /usr/lib/ladspa/sine.so
+7f70657fa000-7f70657fb000 rw-p 00002000 08:01 22421574                   /usr/lib/ladspa/sine.so
+7f70657fb000-7f70657fc000 r-xp 00000000 08:01 22421573                   /usr/lib/ladspa/noise.so
+7f70657fc000-7f70659fb000 ---p 00001000 08:01 22421573                   /usr/lib/ladspa/noise.so
+7f70659fb000-7f70659fc000 rw-p 00000000 08:01 22421573                   /usr/lib/ladspa/noise.so
+7f70659fc000-7f7065a05000 r-xp 00000000 08:01 22418139                   /usr/lib/ladspa/ZamDynamicEQ-ladspa.so
+7f7065a05000-7f7065c04000 ---p 00009000 08:01 22418139                   /usr/lib/ladspa/ZamDynamicEQ-ladspa.so
+7f7065c04000-7f7065c05000 r--p 00008000 08:01 22418139                   /usr/lib/ladspa/ZamDynamicEQ-ladspa.so
+7f7065c05000-7f7065c06000 rw-p 00009000 08:01 22418139                   /usr/lib/ladspa/ZamDynamicEQ-ladspa.so
+7f7065c06000-7f7065c07000 r-xp 00000000 08:01 22421571                   /usr/lib/ladspa/delay.so
+7f7065c07000-7f7065e06000 ---p 00001000 08:01 22421571                   /usr/lib/ladspa/delay.so
+7f7065e06000-7f7065e07000 rw-p 00000000 08:01 22421571                   /usr/lib/ladspa/delay.so
+7f7065e07000-7f7065e0f000 r-xp 00000000 08:01 22418138                   /usr/lib/ladspa/ZamGEQ31-ladspa.so
+7f7065e0f000-7f706600e000 ---p 00008000 08:01 22418138                   /usr/lib/ladspa/ZamGEQ31-ladspa.so
+7f706600e000-7f706600f000 r--p 00007000 08:01 22418138                   /usr/lib/ladspa/ZamGEQ31-ladspa.so
+7f706600f000-7f7066010000 rw-p 00008000 08:01 22418138                   /usr/lib/ladspa/ZamGEQ31-ladspa.so
+7f7066010000-7f7066016000 r-xp 00000000 08:01 22418137                   /usr/lib/ladspa/ZaMaximX2-ladspa.so
+7f7066016000-7f7066215000 ---p 00006000 08:01 22418137                   /usr/lib/ladspa/ZaMaximX2-ladspa.so
+7f7066215000-7f7066216000 r--p 00005000 08:01 22418137                   /usr/lib/ladspa/ZaMaximX2-ladspa.so
+7f7066216000-7f7066217000 rw-p 00006000 08:01 22418137                   /usr/lib/ladspa/ZaMaximX2-ladspa.so
+7f7066217000-7f7066218000 r-xp 00000000 08:01 22421570                   /usr/lib/ladspa/amp.so
+7f7066218000-7f7066417000 ---p 00001000 08:01 22421570                   /usr/lib/ladspa/amp.so
+7f7066417000-7f7066418000 rw-p 00000000 08:01 22421570                   /usr/lib/ladspa/amp.so
+7f7066418000-7f706641a000 r-xp 00000000 08:01 22421572                   /usr/lib/ladspa/filter.so
+7f706641a000-7f7066619000 ---p 00002000 08:01 22421572                   /usr/lib/ladspa/filter.so
+7f7066619000-7f706661a000 rw-p 00001000 08:01 22421572                   /usr/lib/ladspa/filter.so
+7f706661a000-7f7066811000 r-xp 00000000 08:01 22314669                   /usr/lib/libfftw3.so.3.5.5
+7f7066811000-7f7066a10000 ---p 001f7000 08:01 22314669                   /usr/lib/libfftw3.so.3.5.5
+7f7066a10000-7f7066a21000 r--p 001f6000 08:01 22314669                   /usr/lib/libfftw3.so.3.5.5
+7f7066a21000-7f7066a22000 rw-p 00207000 08:01 22314669                   /usr/lib/libfftw3.so.3.5.5
+7f7066a22000-7f7066b8d000 r-xp 00000000 08:01 22311957                   /usr/lib/libsamplerate.so.0.1.8
+7f7066b8d000-7f7066d8c000 ---p 0016b000 08:01 22311957                   /usr/lib/libsamplerate.so.0.1.8
+7f7066d8c000-7f7066d8d000 r--p 0016a000 08:01 22311957                   /usr/lib/libsamplerate.so.0.1.8
+7f7066d8d000-7f7066d8e000 rw-p 0016b000 08:01 22311957                   /usr/lib/libsamplerate.so.0.1.8
+7f7066d8e000-7f7066dba000 r-xp 00000000 08:01 22421581                   /usr/lib/ladspa/ladspa-rubberband.so
+7f7066dba000-7f7066fba000 ---p 0002c000 08:01 22421581                   /usr/lib/ladspa/ladspa-rubberband.so
+7f7066fba000-7f7066fbb000 r--p 0002c000 08:01 22421581                   /usr/lib/ladspa/ladspa-rubberband.so
+7f7066fbb000-7f7066fbc000 rw-p 0002d000 08:01 22421581                   /usr/lib/ladspa/ladspa-rubberband.so
+7f7066fbc000-7f7066fc3000 r-xp 00000000 08:01 22418136                   /usr/lib/ladspa/ZamComp-ladspa.so
+7f7066fc3000-7f70671c2000 ---p 00007000 08:01 22418136                   /usr/lib/ladspa/ZamComp-ladspa.so
+7f70671c2000-7f70671c3000 r--p 00006000 08:01 22418136                   /usr/lib/ladspa/ZamComp-ladspa.so
+7f70671c3000-7f70671c4000 rw-p 00007000 08:01 22418136                   /usr/lib/ladspa/ZamComp-ladspa.so
+7f70671c4000-7f70671cb000 r-xp 00000000 08:01 22418135                   /usr/lib/ladspa/ZamCompX2-ladspa.so
+7f70671cb000-7f70673cb000 ---p 00007000 08:01 22418135                   /usr/lib/ladspa/ZamCompX2-ladspa.so
+7f70673cb000-7f70673cc000 r--p 00007000 08:01 22418135                   /usr/lib/ladspa/ZamCompX2-ladspa.so
+7f70673cc000-7f70673cd000 rw-p 00008000 08:01 22418135                   /usr/lib/ladspa/ZamCompX2-ladspa.so
+7f70673cd000-7f70673d6000 r-xp 00000000 08:01 22418134                   /usr/lib/ladspa/ZaMultiComp-ladspa.so
+7f70673d6000-7f70675d6000 ---p 00009000 08:01 22418134                   /usr/lib/ladspa/ZaMultiComp-ladspa.so
+7f70675d6000-7f70675d7000 r--p 00009000 08:01 22418134                   /usr/lib/ladspa/ZaMultiComp-ladspa.so
+7f70675d7000-7f70675d8000 rw-p 0000a000 08:01 22418134                   /usr/lib/ladspa/ZaMultiComp-ladspa.so
+7f70675d8000-7f70675de000 r-xp 00000000 08:01 22417562                   /usr/lib/ladspa/ZamGateX2-ladspa.so
+7f70675de000-7f70677de000 ---p 00006000 08:01 22417562                   /usr/lib/ladspa/ZamGateX2-ladspa.so
+7f70677de000-7f70677df000 r--p 00006000 08:01 22417562                   /usr/lib/ladspa/ZamGateX2-ladspa.so
+7f70677df000-7f70677e0000 rw-p 00007000 08:01 22417562                   /usr/lib/ladspa/ZamGateX2-ladspa.so
+7f70677e0000-7f70677e6000 r-xp 00000000 08:01 22417559                   /usr/lib/ladspa/ZamPhono-ladspa.so
+7f70677e6000-7f70679e5000 ---p 00006000 08:01 22417559                   /usr/lib/ladspa/ZamPhono-ladspa.so
+7f70679e5000-7f70679e6000 r--p 00005000 08:01 22417559                   /usr/lib/ladspa/ZamPhono-ladspa.so
+7f70679e6000-7f70679e7000 rw-p 00006000 08:01 22417559                   /usr/lib/ladspa/ZamPhono-ladspa.so
+7f70679e7000-7f70679f7000 r-xp 00000000 08:01 22417548                   /usr/lib/ladspa/ZamTube-ladspa.so
+7f70679f7000-7f7067bf7000 ---p 00010000 08:01 22417548                   /usr/lib/ladspa/ZamTube-ladspa.so
+7f7067bf7000-7f7067bf8000 r--p 00010000 08:01 22417548                   /usr/lib/ladspa/ZamTube-ladspa.so
+7f7067bf8000-7f7067bf9000 rw-p 00011000 08:01 22417548                   /usr/lib/ladspa/ZamTube-ladspa.so
+7f7067bf9000-7f7067bfb000 r-xp 00000000 08:01 19529776                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LadspaUGen.so
+7f7067bfb000-7f7067dfb000 ---p 00002000 08:01 19529776                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LadspaUGen.so
+7f7067dfb000-7f7067dfc000 r--p 00002000 08:01 19529776                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LadspaUGen.so
+7f7067dfc000-7f7067dfd000 rw-p 00003000 08:01 19529776                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LadspaUGen.so
+7f7067dfd000-7f7067dff000 r-xp 00000000 08:01 19529789                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f7067dff000-7f7067ffe000 ---p 00002000 08:01 19529789                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f7067ffe000-7f7067fff000 r--p 00001000 08:01 19529789                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f7067fff000-7f7068000000 rw-p 00002000 08:01 19529789                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f7068000000-7f706810e000 rw-p 00000000 00:00 0 
+7f706810e000-7f706c000000 ---p 00000000 00:00 0 
+7f706c02d000-7f706c032000 r-xp 00000000 08:01 19529766                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobGrain.so
+7f706c032000-7f706c232000 ---p 00005000 08:01 19529766                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobGrain.so
+7f706c232000-7f706c233000 r--p 00005000 08:01 19529766                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobGrain.so
+7f706c233000-7f706c234000 rw-p 00006000 08:01 19529766                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobGrain.so
+7f706c234000-7f706c2f6000 r-xp 00000000 08:01 19529797                   /home/chad/beatboxchad_live/target/native/linux/x86_64/StkUGens.so
+7f706c2f6000-7f706c4f5000 ---p 000c2000 08:01 19529797                   /home/chad/beatboxchad_live/target/native/linux/x86_64/StkUGens.so
+7f706c4f5000-7f706c4f9000 r--p 000c1000 08:01 19529797                   /home/chad/beatboxchad_live/target/native/linux/x86_64/StkUGens.so
+7f706c4f9000-7f706c4fe000 rw-p 000c5000 08:01 19529797                   /home/chad/beatboxchad_live/target/native/linux/x86_64/StkUGens.so
+7f706c4fe000-7f706c504000 r-xp 00000000 08:01 19529757                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BBCut2UGens.so
+7f706c504000-7f706c703000 ---p 00006000 08:01 19529757                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BBCut2UGens.so
+7f706c703000-7f706c704000 r--p 00005000 08:01 19529757                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BBCut2UGens.so
+7f706c704000-7f706c706000 rw-p 00006000 08:01 19529757                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BBCut2UGens.so
+7f706c706000-7f706c718000 r-xp 00000000 08:01 19529925                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LFUGens.so
+7f706c718000-7f706c918000 ---p 00012000 08:01 19529925                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LFUGens.so
+7f706c918000-7f706c919000 r--p 00012000 08:01 19529925                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LFUGens.so
+7f706c919000-7f706c91a000 rw-p 00013000 08:01 19529925                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LFUGens.so
+7f706c91a000-7f706c91d000 r-xp 00000000 08:01 19529768                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BlackrainUGens.so
+7f706c91d000-7f706cb1d000 ---p 00003000 08:01 19529768                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BlackrainUGens.so
+7f706cb1d000-7f706cb1e000 r--p 00003000 08:01 19529768                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BlackrainUGens.so
+7f706cb1e000-7f706cb1f000 rw-p 00004000 08:01 19529768                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BlackrainUGens.so
+7f706cb1f000-7f706cb22000 r-xp 00000000 08:01 19529790                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MdaUGens.so
+7f706cb22000-7f706cd21000 ---p 00003000 08:01 19529790                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MdaUGens.so
+7f706cd21000-7f706cd22000 r--p 00002000 08:01 19529790                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MdaUGens.so
+7f706cd22000-7f706ce41000 rw-p 00003000 08:01 19529790                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MdaUGens.so
+7f706ce41000-7f706ce73000 r-xp 00000000 08:01 19529913                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BinaryOpUGens.so
+7f706ce73000-7f706d073000 ---p 00032000 08:01 19529913                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BinaryOpUGens.so
+7f706d073000-7f706d074000 r--p 00032000 08:01 19529913                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BinaryOpUGens.so
+7f706d074000-7f706d075000 rw-p 00033000 08:01 19529913                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BinaryOpUGens.so
+7f706d075000-7f706d07f000 r-xp 00000000 08:01 19529927                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ML_UGens.so
+7f706d07f000-7f706d27e000 ---p 0000a000 08:01 19529927                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ML_UGens.so
+7f706d27e000-7f706d27f000 r--p 00009000 08:01 19529927                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ML_UGens.so
+7f706d27f000-7f706d287000 rw-p 0000a000 08:01 19529927                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ML_UGens.so
+7f706d287000-7f706d2c3000 rw-p 00000000 00:00 0 
+7f706d2c3000-7f706d2c9000 r-xp 00000000 08:01 19529934                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PV_ThirdParty.so
+7f706d2c9000-7f706d4c9000 ---p 00006000 08:01 19529934                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PV_ThirdParty.so
+7f706d4c9000-7f706d4ca000 r--p 00006000 08:01 19529934                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PV_ThirdParty.so
+7f706d4ca000-7f706d4cb000 rw-p 00007000 08:01 19529934                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PV_ThirdParty.so
+7f706d4cb000-7f706d4fb000 rw-p 00000000 00:00 0 
+7f706d4fb000-7f706d4ff000 r-xp 00000000 08:01 19529778                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDBufferUGens.so
+7f706d4ff000-7f706d6fe000 ---p 00004000 08:01 19529778                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDBufferUGens.so
+7f706d6fe000-7f706d6ff000 r--p 00003000 08:01 19529778                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDBufferUGens.so
+7f706d6ff000-7f706d700000 rw-p 00004000 08:01 19529778                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDBufferUGens.so
+7f706d700000-7f706d70c000 r-xp 00000000 08:01 19529919                   /home/chad/beatboxchad_live/target/native/linux/x86_64/FFT_UGens.so
+7f706d70c000-7f706d90c000 ---p 0000c000 08:01 19529919                   /home/chad/beatboxchad_live/target/native/linux/x86_64/FFT_UGens.so
+7f706d90c000-7f706d90d000 r--p 0000c000 08:01 19529919                   /home/chad/beatboxchad_live/target/native/linux/x86_64/FFT_UGens.so
+7f706d90d000-7f706d90e000 rw-p 0000d000 08:01 19529919                   /home/chad/beatboxchad_live/target/native/linux/x86_64/FFT_UGens.so
+7f706d90e000-7f706d93e000 rw-p 00000000 00:00 0 
+7f706d93e000-7f706d94c000 r-xp 00000000 08:01 19529796                   /home/chad/beatboxchad_live/target/native/linux/x86_64/SLUGens.so
+7f706d94c000-7f706db4b000 ---p 0000e000 08:01 19529796                   /home/chad/beatboxchad_live/target/native/linux/x86_64/SLUGens.so
+7f706db4b000-7f706db4c000 r--p 0000d000 08:01 19529796                   /home/chad/beatboxchad_live/target/native/linux/x86_64/SLUGens.so
+7f706db4c000-7f706db4d000 rw-p 0000e000 08:01 19529796                   /home/chad/beatboxchad_live/target/native/linux/x86_64/SLUGens.so
+7f706db4d000-7f706db4f000 r-xp 00000000 08:01 19529755                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BatPVUgens.so
+7f706db4f000-7f706dd4e000 ---p 00002000 08:01 19529755                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BatPVUgens.so
+7f706dd4e000-7f706dd4f000 r--p 00001000 08:01 19529755                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BatPVUgens.so
+7f706dd4f000-7f706dd50000 rw-p 00002000 08:01 19529755                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BatPVUgens.so
+7f706dd50000-7f706dd5c000 rw-p 00000000 00:00 0 
+7f706dd5c000-7f706dd5f000 r-xp 00000000 08:01 19529788                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDTreeUGens.so
+7f706dd5f000-7f706df5e000 ---p 00003000 08:01 19529788                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDTreeUGens.so
+7f706df5e000-7f706df5f000 r--p 00002000 08:01 19529788                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDTreeUGens.so
+7f706df5f000-7f706df60000 rw-p 00003000 08:01 19529788                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDTreeUGens.so
+7f706df60000-7f706df66000 r-xp 00000000 08:01 19529929                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MulAddUGens.so
+7f706df66000-7f706e165000 ---p 00006000 08:01 19529929                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MulAddUGens.so
+7f706e165000-7f706e166000 r--p 00005000 08:01 19529929                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MulAddUGens.so
+7f706e166000-7f706e167000 rw-p 00006000 08:01 19529929                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MulAddUGens.so
+7f706e167000-7f706e171000 r-xp 00000000 08:01 19529782                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDFFTUGens.so
+7f706e171000-7f706e370000 ---p 0000a000 08:01 19529782                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDFFTUGens.so
+7f706e370000-7f706e371000 r--p 00009000 08:01 19529782                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDFFTUGens.so
+7f706e371000-7f706e372000 rw-p 0000a000 08:01 19529782                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDFFTUGens.so
+7f706e372000-7f706e37e000 rw-p 00000000 00:00 0 
+7f706e37e000-7f706e380000 r-xp 00000000 08:01 19529785                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDOscUGens.so
+7f706e380000-7f706e57f000 ---p 00002000 08:01 19529785                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDOscUGens.so
+7f706e57f000-7f706e580000 r--p 00001000 08:01 19529785                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDOscUGens.so
+7f706e580000-7f706e581000 rw-p 00002000 08:01 19529785                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDOscUGens.so
+7f706e581000-7f706e584000 r-xp 00000000 08:01 19529791                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MembraneUGens.so
+7f706e584000-7f706e783000 ---p 00003000 08:01 19529791                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MembraneUGens.so
+7f706e783000-7f706e784000 r--p 00002000 08:01 19529791                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MembraneUGens.so
+7f706e784000-7f706e785000 rw-p 00003000 08:01 19529791                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MembraneUGens.so
+7f706e785000-7f706e7a3000 r-xp 00000000 08:01 19529775                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshUGens.so
+7f706e7a3000-7f706e9a3000 ---p 0001e000 08:01 19529775                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshUGens.so
+7f706e9a3000-7f706e9a4000 r--p 0001e000 08:01 19529775                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshUGens.so
+7f706e9a4000-7f706e9a5000 rw-p 0001f000 08:01 19529775                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshUGens.so
+7f706e9a5000-7f706e9b6000 r-xp 00000000 08:01 19529931                   /home/chad/beatboxchad_live/target/native/linux/x86_64/OscUGens.so
+7f706e9b6000-7f706ebb5000 ---p 00011000 08:01 19529931                   /home/chad/beatboxchad_live/target/native/linux/x86_64/OscUGens.so
+7f706ebb5000-7f706ebb6000 r--p 00010000 08:01 19529931                   /home/chad/beatboxchad_live/target/native/linux/x86_64/OscUGens.so
+7f706ebb6000-7f706ebb7000 rw-p 00011000 08:01 19529931                   /home/chad/beatboxchad_live/target/native/linux/x86_64/OscUGens.so
+7f706ebb7000-7f706ebbf000 r-xp 00000000 08:01 19529932                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PanUGens.so
+7f706ebbf000-7f706edbe000 ---p 00008000 08:01 19529932                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PanUGens.so
+7f706edbe000-7f706edbf000 r--p 00007000 08:01 19529932                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PanUGens.so
+7f706edbf000-7f706edc0000 rw-p 00008000 08:01 19529932                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PanUGens.so
+7f706edc0000-7f706edc3000 r-xp 00000000 08:01 19529921                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GendynUGens.so
+7f706edc3000-7f706efc2000 ---p 00003000 08:01 19529921                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GendynUGens.so
+7f706efc2000-7f706efc3000 r--p 00002000 08:01 19529921                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GendynUGens.so
+7f706efc3000-7f706efc4000 rw-p 00003000 08:01 19529921                   /home/chad/beatboxchad_live/target/native/linux/x86_64/GendynUGens.so
+7f706efc4000-7f706efd7000 r-xp 00000000 08:01 19529938                   /home/chad/beatboxchad_live/target/native/linux/x86_64/UnaryOpUGens.so
+7f706efd7000-7f706f1d7000 ---p 00013000 08:01 19529938                   /home/chad/beatboxchad_live/target/native/linux/x86_64/UnaryOpUGens.so
+7f706f1d7000-7f706f1d8000 r--p 00013000 08:01 19529938                   /home/chad/beatboxchad_live/target/native/linux/x86_64/UnaryOpUGens.so
+7f706f1d8000-7f706f1d9000 rw-p 00014000 08:01 19529938                   /home/chad/beatboxchad_live/target/native/linux/x86_64/UnaryOpUGens.so
+7f706f1d9000-7f706f1dc000 r-xp 00000000 08:01 19529777                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LoopBuf.so
+7f706f1dc000-7f706f3db000 ---p 00003000 08:01 19529777                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LoopBuf.so
+7f706f3db000-7f706f3dc000 r--p 00002000 08:01 19529777                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LoopBuf.so
+7f706f3dc000-7f706f3dd000 rw-p 00003000 08:01 19529777                   /home/chad/beatboxchad_live/target/native/linux/x86_64/LoopBuf.so
+7f706f3dd000-7f706f3e4000 r-xp 00000000 08:01 19529914                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ChaosUGens.so
+7f706f3e4000-7f706f5e3000 ---p 00007000 08:01 19529914                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ChaosUGens.so
+7f706f5e3000-7f706f5e4000 r--p 00006000 08:01 19529914                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ChaosUGens.so
+7f706f5e4000-7f706f5e5000 rw-p 00007000 08:01 19529914                   /home/chad/beatboxchad_live/target/native/linux/x86_64/ChaosUGens.so
+7f706f5e5000-7f706f5e9000 r-xp 00000000 08:01 19529756                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BatUGens.so
+7f706f5e9000-7f706f7e8000 ---p 00004000 08:01 19529756                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BatUGens.so
+7f706f7e8000-7f706f7e9000 r--p 00003000 08:01 19529756                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BatUGens.so
+7f706f7e9000-7f706f7ea000 rw-p 00004000 08:01 19529756                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BatUGens.so
+7f706f7ea000-7f706f7ed000 r-xp 00000000 08:01 19529918                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DynNoiseUGens.so
+7f706f7ed000-7f706f9ec000 ---p 00003000 08:01 19529918                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DynNoiseUGens.so
+7f706f9ec000-7f706f9ed000 r--p 00002000 08:01 19529918                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DynNoiseUGens.so
+7f706f9ed000-7f706f9ee000 rw-p 00003000 08:01 19529918                   /home/chad/beatboxchad_live/target/native/linux/x86_64/DynNoiseUGens.so
+7f706f9ee000-7f706f9f0000 r-xp 00000000 08:01 19529933                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f706f9f0000-7f706fbef000 ---p 00002000 08:01 19529933                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f706fbef000-7f706fbf0000 r--p 00001000 08:01 19529933                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f706fbf0000-7f706fbf1000 rw-p 00002000 08:01 19529933                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f706fbf1000-7f706fbfc000 r-xp 00000000 08:01 19529763                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobChaos.so
+7f706fbfc000-7f706fdfb000 ---p 0000b000 08:01 19529763                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobChaos.so
+7f706fdfb000-7f706fdfc000 r--p 0000a000 08:01 19529763                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobChaos.so
+7f706fdfc000-7f706fdfd000 rw-p 0000b000 08:01 19529763                   /home/chad/beatboxchad_live/target/native/linux/x86_64/BhobChaos.so
+7f706fdfd000-7f706fdff000 r-xp 00000000 08:01 19529786                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDPollUGens.so
+7f706fdff000-7f706fffe000 ---p 00002000 08:01 19529786                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDPollUGens.so
+7f706fffe000-7f706ffff000 r--p 00001000 08:01 19529786                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDPollUGens.so
+7f706ffff000-7f7070000000 rw-p 00002000 08:01 19529786                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDPollUGens.so
+7f7070000000-7f7070021000 rw-p 00000000 00:00 0 
+7f7070021000-7f7074000000 ---p 00000000 00:00 0 
+7f7074000000-7f7074021000 rw-p 00000000 00:00 0 
+7f7074021000-7f7078000000 ---p 00000000 00:00 0 
+7f7078000000-7f7078021000 rw-p 00000000 00:00 0 
+7f7078021000-7f707c000000 ---p 00000000 00:00 0 
+7f707c000000-7f707c021000 rw-p 00000000 00:00 0 
+7f707c021000-7f7080000000 ---p 00000000 00:00 0 
+7f7080000000-7f7080021000 rw-p 00000000 00:00 0 
+7f7080021000-7f7084000000 ---p 00000000 00:00 0 
+7f7084000000-7f7084021000 rw-p 00000000 00:00 0 
+7f7084021000-7f7088000000 ---p 00000000 00:00 0 
+7f7088000000-7f7088021000 rw-p 00000000 00:00 0 
+7f7088021000-7f708c000000 ---p 00000000 00:00 0 
+7f708c000000-7f708c021000 rw-p 00000000 00:00 0 
+7f708c021000-7f7090000000 ---p 00000000 00:00 0 
+7f7090000000-7f7090021000 rw-p 00000000 00:00 0 
+7f7090021000-7f7094000000 ---p 00000000 00:00 0 
+7f7094000000-7f7094021000 rw-p 00000000 00:00 0 
+7f7094021000-7f7098000000 ---p 00000000 00:00 0 
+7f7098000000-7f7098021000 rw-p 00000000 00:00 0 
+7f7098021000-7f709c000000 ---p 00000000 00:00 0 
+7f709c000000-7f709c021000 rw-p 00000000 00:00 0 
+7f709c021000-7f70a0000000 ---p 00000000 00:00 0 
+7f70a0000000-7f70a0021000 rw-p 00000000 00:00 0 
+7f70a0021000-7f70a4000000 ---p 00000000 00:00 0 
+7f70a4000000-7f70a4021000 rw-p 00000000 00:00 0 
+7f70a4021000-7f70a8000000 ---p 00000000 00:00 0 
+7f70a8000000-7f70a8021000 rw-p 00000000 00:00 0 
+7f70a8021000-7f70ac000000 ---p 00000000 00:00 0 
+7f70ac000000-7f70ac021000 rw-p 00000000 00:00 0 
+7f70ac021000-7f70b0000000 ---p 00000000 00:00 0 
+7f70b0000000-7f70b0021000 rw-p 00000000 00:00 0 
+7f70b0021000-7f70b4000000 ---p 00000000 00:00 0 
+7f70b4000000-7f70b4021000 rw-p 00000000 00:00 0 
+7f70b4021000-7f70b8000000 ---p 00000000 00:00 0 
+7f70b8000000-7f70b8021000 rw-p 00000000 00:00 0 
+7f70b8021000-7f70bc000000 ---p 00000000 00:00 0 
+7f70bc18d000-7f70bc190000 r-xp 00000000 08:01 19529783                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDFilterUGens.so
+7f70bc190000-7f70bc38f000 ---p 00003000 08:01 19529783                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDFilterUGens.so
+7f70bc38f000-7f70bc390000 r--p 00002000 08:01 19529783                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDFilterUGens.so
+7f70bc390000-7f70bc391000 rw-p 00003000 08:01 19529783                   /home/chad/beatboxchad_live/target/native/linux/x86_64/MCLDFilterUGens.so
+7f70bc391000-7f70bc3ad000 r-xp 00000000 08:01 19529920                   /home/chad/beatboxchad_live/target/native/linux/x86_64/FilterUGens.so
+7f70bc3ad000-7f70bc5ac000 ---p 0001c000 08:01 19529920                   /home/chad/beatboxchad_live/target/native/linux/x86_64/FilterUGens.so
+7f70bc5ac000-7f70bc5ad000 r--p 0001b000 08:01 19529920                   /home/chad/beatboxchad_live/target/native/linux/x86_64/FilterUGens.so
+7f70bc5ad000-7f70bc5ae000 rw-p 0001c000 08:01 19529920                   /home/chad/beatboxchad_live/target/native/linux/x86_64/FilterUGens.so
+7f70bc5ae000-7f70bc5c9000 r-xp 00000000 08:01 19529753                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AtkUGens.so
+7f70bc5c9000-7f70bc7c9000 ---p 0001b000 08:01 19529753                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AtkUGens.so
+7f70bc7c9000-7f70bc7ca000 r--p 0001b000 08:01 19529753                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AtkUGens.so
+7f70bc7ca000-7f70bc7cb000 rw-p 0001c000 08:01 19529753                   /home/chad/beatboxchad_live/target/native/linux/x86_64/AtkUGens.so
+7f70bc7cb000-7f70bc805000 r-xp 00000000 08:01 19529773                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshGrainUGens.so
+7f70bc805000-7f70bca04000 ---p 0003a000 08:01 19529773                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshGrainUGens.so
+7f70bca04000-7f70bca05000 r--p 00039000 08:01 19529773                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshGrainUGens.so
+7f70bca05000-7f70bca06000 rw-p 0003a000 08:01 19529773                   /home/chad/beatboxchad_live/target/native/linux/x86_64/JoshGrainUGens.so
+7f70bca06000-7f70bca12000 r-xp 00000000 08:01 19529793                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PitchDetection.so
+7f70bca12000-7f70bcc11000 ---p 0000c000 08:01 19529793                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PitchDetection.so
+7f70bcc11000-7f70bcc12000 r--p 0000b000 08:01 19529793                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PitchDetection.so
+7f70bcc12000-7f70bcc13000 rw-p 0000c000 08:01 19529793                   /home/chad/beatboxchad_live/target/native/linux/x86_64/PitchDetection.so
+7f70bcc13000-7f70bcc15000 r-xp 00000000 08:01 19529794                   /home/chad/beatboxchad_live/target/native/linux/x86_64/RFWUGens.so
+7f70bcc15000-7f70bce14000 ---p 00002000 08:01 19529794                   /home/chad/beatboxchad_live/target/native/linux/x86_64/RFWUGens.so
+7f70bce14000-7f70bce15000 r--p 00001000 08:01 19529794                   /home/chad/beatboxchad_live/target/native/linux/x86_64/RFWUGens.so
+7f70bce15000-7f70bce16000 rw-p 00002000 08:01 19529794                   /home/chad/beatboxchad_live/target/native/linux/x86_64/RFWUGens.so
+7f70bce16000-7f70bce19000 ---p 00000000 00:00 0 
+7f70bce19000-7f70bcf17000 rw-p 00000000 00:00 0 
+7f70bcf17000-7f70bcf1f000 r-xp 00000000 08:01 22944027                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libmanagement.so
+7f70bcf1f000-7f70bd11e000 ---p 00008000 08:01 22944027                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libmanagement.so
+7f70bd11e000-7f70bd11f000 r--p 00007000 08:01 22944027                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libmanagement.so
+7f70bd11f000-7f70bd120000 rw-p 00008000 08:01 22944027                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libmanagement.so
+7f70bd120000-7f70bd260000 rw-p 00000000 00:00 0 
+7f70bd260000-7f70bd320000 ---p 00000000 00:00 0 
+7f70bd320000-7f70bd426000 r-xp 00000000 08:01 22310997                   /usr/lib/libasound.so.2.0.0
+7f70bd426000-7f70bd625000 ---p 00106000 08:01 22310997                   /usr/lib/libasound.so.2.0.0
+7f70bd625000-7f70bd62c000 r--p 00105000 08:01 22310997                   /usr/lib/libasound.so.2.0.0
+7f70bd62c000-7f70bd62e000 rw-p 0010c000 08:01 22310997                   /usr/lib/libasound.so.2.0.0
+7f70bd62e000-7f70bd63d000 r-xp 00000000 08:01 22944089                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsoundalsa.so
+7f70bd63d000-7f70bd83c000 ---p 0000f000 08:01 22944089                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsoundalsa.so
+7f70bd83c000-7f70bd83d000 r--p 0000e000 08:01 22944089                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsoundalsa.so
+7f70bd83d000-7f70bd83e000 rw-p 0000f000 08:01 22944089                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsoundalsa.so
+7f70bd83e000-7f70bd83f000 r-xp 00000000 08:01 22944088                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsound.so
+7f70bd83f000-7f70bda3e000 ---p 00001000 08:01 22944088                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsound.so
+7f70bda3e000-7f70bda3f000 r--p 00000000 08:01 22944088                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsound.so
+7f70bda3f000-7f70bda40000 rw-p 00001000 08:01 22944088                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjsound.so
+7f70bda40000-7f70bda43000 ---p 00000000 00:00 0 
+7f70bda43000-7f70bdd41000 rw-p 00000000 00:00 0 
+7f70bdd41000-7f70bdf41000 rw-p 00000000 00:00 0 
+7f70bdf41000-7f70bdf44000 ---p 00000000 00:00 0 
+7f70bdf44000-7f70be242000 rw-p 00000000 00:00 0 
+7f70be242000-7f70be245000 ---p 00000000 00:00 0 
+7f70be245000-7f70be543000 rw-p 00000000 00:00 0 
+7f70be543000-7f70be546000 ---p 00000000 00:00 0 
+7f70be546000-7f70be644000 rw-p 00000000 00:00 0 
+7f70be644000-7f70be647000 ---p 00000000 00:00 0 
+7f70be647000-7f70be745000 rw-p 00000000 00:00 0 
+7f70be745000-7f70be748000 ---p 00000000 00:00 0 
+7f70be748000-7f70be846000 rw-p 00000000 00:00 0 
+7f70be846000-7f70be849000 ---p 00000000 00:00 0 
+7f70be849000-7f70be947000 rw-p 00000000 00:00 0 
+7f70be947000-7f70be94a000 ---p 00000000 00:00 0 
+7f70be94a000-7f70bea48000 rw-p 00000000 00:00 0 
+7f70bea48000-7f70bea4b000 ---p 00000000 00:00 0 
+7f70bea4b000-7f70beb49000 rw-p 00000000 00:00 0 
+7f70beb49000-7f70beb4c000 ---p 00000000 00:00 0 
+7f70beb4c000-7f70bec4a000 rw-p 00000000 00:00 0 
+7f70bec4a000-7f70bec4d000 ---p 00000000 00:00 0 
+7f70bec4d000-7f70bed4b000 rw-p 00000000 00:00 0 
+7f70bed4b000-7f70bed4e000 ---p 00000000 00:00 0 
+7f70bed4e000-7f70bee4c000 rw-p 00000000 00:00 0 
+7f70bee4c000-7f70bee4f000 ---p 00000000 00:00 0 
+7f70bee4f000-7f70bef4d000 rw-p 00000000 00:00 0 
+7f70bef4d000-7f70bef50000 ---p 00000000 00:00 0 
+7f70bef50000-7f70bf24e000 rw-p 00000000 00:00 0 
+7f70bf24e000-7f70bf251000 ---p 00000000 00:00 0 
+7f70bf251000-7f70bf54f000 rw-p 00000000 00:00 0 
+7f70bf54f000-7f70bf552000 ---p 00000000 00:00 0 
+7f70bf552000-7f70bf650000 rw-p 00000000 00:00 0 
+7f70bf650000-7f70bf653000 ---p 00000000 00:00 0 
+7f70bf653000-7f70bf751000 rw-p 00000000 00:00 0 
+7f70bf751000-7f70bf754000 ---p 00000000 00:00 0 
+7f70bf754000-7f70bfa52000 rw-p 00000000 00:00 0 
+7f70bfa52000-7f70bfa65000 r-xp 00000000 08:01 22321461                   /usr/lib/libgpg-error.so.0.21.0
+7f70bfa65000-7f70bfc64000 ---p 00013000 08:01 22321461                   /usr/lib/libgpg-error.so.0.21.0
+7f70bfc64000-7f70bfc65000 r--p 00012000 08:01 22321461                   /usr/lib/libgpg-error.so.0.21.0
+7f70bfc65000-7f70bfc66000 rw-p 00013000 08:01 22321461                   /usr/lib/libgpg-error.so.0.21.0
+7f70bfc66000-7f70bfd6d000 r-xp 00000000 08:01 22293541                   /usr/lib/libgcrypt.so.20.1.5
+7f70bfd6d000-7f70bff6c000 ---p 00107000 08:01 22293541                   /usr/lib/libgcrypt.so.20.1.5
+7f70bff6c000-7f70bff6e000 r--p 00106000 08:01 22293541                   /usr/lib/libgcrypt.so.20.1.5
+7f70bff6e000-7f70bff75000 rw-p 00108000 08:01 22293541                   /usr/lib/libgcrypt.so.20.1.5
+7f70bff75000-7f70bff86000 r-xp 00000000 08:01 22293557                   /usr/lib/liblz4.so.1.7.4
+7f70bff86000-7f70c0185000 ---p 00011000 08:01 22293557                   /usr/lib/liblz4.so.1.7.4
+7f70c0185000-7f70c0186000 r--p 00010000 08:01 22293557                   /usr/lib/liblz4.so.1.7.4
+7f70c0186000-7f70c0187000 rw-p 00011000 08:01 22293557                   /usr/lib/liblz4.so.1.7.4
+7f70c0187000-7f70c01ac000 r-xp 00000000 08:01 22293575                   /usr/lib/liblzma.so.5.2.3
+7f70c01ac000-7f70c03ab000 ---p 00025000 08:01 22293575                   /usr/lib/liblzma.so.5.2.3
+7f70c03ab000-7f70c03ac000 r--p 00024000 08:01 22293575                   /usr/lib/liblzma.so.5.2.3
+7f70c03ac000-7f70c03ad000 rw-p 00025000 08:01 22293575                   /usr/lib/liblzma.so.5.2.3
+7f70c03ad000-7f70c03b1000 r-xp 00000000 08:01 22288745                   /usr/lib/libcap.so.2.25
+7f70c03b1000-7f70c05b0000 ---p 00004000 08:01 22288745                   /usr/lib/libcap.so.2.25
+7f70c05b0000-7f70c05b1000 rw-p 00003000 08:01 22288745                   /usr/lib/libcap.so.2.25
+7f70c05b1000-7f70c05c5000 r-xp 00000000 08:01 22285538                   /usr/lib/libresolv-2.24.so
+7f70c05c5000-7f70c07c4000 ---p 00014000 08:01 22285538                   /usr/lib/libresolv-2.24.so
+7f70c07c4000-7f70c07c5000 r--p 00013000 08:01 22285538                   /usr/lib/libresolv-2.24.so
+7f70c07c5000-7f70c07c6000 rw-p 00014000 08:01 22285538                   /usr/lib/libresolv-2.24.so
+7f70c07c6000-7f70c07c8000 rw-p 00000000 00:00 0 
+7f70c07c8000-7f70c097d000 r-xp 00000000 08:01 22288856                   /usr/lib/libdb-5.3.so
+7f70c097d000-7f70c0b7d000 ---p 001b5000 08:01 22288856                   /usr/lib/libdb-5.3.so
+7f70c0b7d000-7f70c0b84000 r--p 001b5000 08:01 22288856                   /usr/lib/libdb-5.3.so
+7f70c0b84000-7f70c0b87000 rw-p 001bc000 08:01 22288856                   /usr/lib/libdb-5.3.so
+7f70c0b87000-7f70c0c18000 r-xp 00000000 08:01 22311917                   /usr/lib/libvorbisenc.so.2.0.11
+7f70c0c18000-7f70c0e17000 ---p 00091000 08:01 22311917                   /usr/lib/libvorbisenc.so.2.0.11
+7f70c0e17000-7f70c0e39000 r--p 00090000 08:01 22311917                   /usr/lib/libvorbisenc.so.2.0.11
+7f70c0e39000-7f70c0e3a000 rw-p 000b2000 08:01 22311917                   /usr/lib/libvorbisenc.so.2.0.11
+7f70c0e3a000-7f70c0e65000 r-xp 00000000 08:01 22311920                   /usr/lib/libvorbis.so.0.4.8
+7f70c0e65000-7f70c1065000 ---p 0002b000 08:01 22311920                   /usr/lib/libvorbis.so.0.4.8
+7f70c1065000-7f70c1066000 r--p 0002b000 08:01 22311920                   /usr/lib/libvorbis.so.0.4.8
+7f70c1066000-7f70c1067000 rw-p 0002c000 08:01 22311920                   /usr/lib/libvorbis.so.0.4.8
+7f70c1067000-7f70c106d000 r-xp 00000000 08:01 22311900                   /usr/lib/libogg.so.0.8.2
+7f70c106d000-7f70c126c000 ---p 00006000 08:01 22311900                   /usr/lib/libogg.so.0.8.2
+7f70c126c000-7f70c126d000 r--p 00005000 08:01 22311900                   /usr/lib/libogg.so.0.8.2
+7f70c126d000-7f70c126e000 rw-p 00006000 08:01 22311900                   /usr/lib/libogg.so.0.8.2
+7f70c126e000-7f70c12e2000 r-xp 00000000 08:01 22311908                   /usr/lib/libFLAC.so.8.3.0
+7f70c12e2000-7f70c14e2000 ---p 00074000 08:01 22311908                   /usr/lib/libFLAC.so.8.3.0
+7f70c14e2000-7f70c14e3000 r--p 00074000 08:01 22311908                   /usr/lib/libFLAC.so.8.3.0
+7f70c14e3000-7f70c14e4000 rw-p 00075000 08:01 22311908                   /usr/lib/libFLAC.so.8.3.0
+7f70c14e4000-7f70c1532000 r-xp 00000000 08:01 22293677                   /usr/lib/libdbus-1.so.3.14.9
+7f70c1532000-7f70c1731000 ---p 0004e000 08:01 22293677                   /usr/lib/libdbus-1.so.3.14.9
+7f70c1731000-7f70c1732000 r--p 0004d000 08:01 22293677                   /usr/lib/libdbus-1.so.3.14.9
+7f70c1732000-7f70c1733000 rw-p 0004e000 08:01 22293677                   /usr/lib/libdbus-1.so.3.14.9
+7f70c1733000-7f70c1734000 rw-p 00000000 00:00 0 
+7f70c1734000-7f70c18ac000 r-xp 00000000 08:01 22285818                   /usr/lib/libstdc++.so.6.0.22
+7f70c18ac000-7f70c1aac000 ---p 00178000 08:01 22285818                   /usr/lib/libstdc++.so.6.0.22
+7f70c1aac000-7f70c1ab6000 r--p 00178000 08:01 22285818                   /usr/lib/libstdc++.so.6.0.22
+7f70c1ab6000-7f70c1ab8000 rw-p 00182000 08:01 22285818                   /usr/lib/libstdc++.so.6.0.22
+7f70c1ab8000-7f70c1abc000 rw-p 00000000 00:00 0 
+7f70c1abc000-7f70c1cc5000 r-xp 00000000 08:01 22314675                   /usr/lib/libfftw3f.so.3.5.5
+7f70c1cc5000-7f70c1ec4000 ---p 00209000 08:01 22314675                   /usr/lib/libfftw3f.so.3.5.5
+7f70c1ec4000-7f70c1ed5000 r--p 00208000 08:01 22314675                   /usr/lib/libfftw3f.so.3.5.5
+7f70c1ed5000-7f70c1ed6000 rw-p 00219000 08:01 22314675                   /usr/lib/libfftw3f.so.3.5.5
+7f70c1ed6000-7f70c1eec000 r-xp 00000000 08:01 22319783                   /usr/lib/libjack.so.0.0.28
+7f70c1eec000-7f70c20eb000 ---p 00016000 08:01 22319783                   /usr/lib/libjack.so.0.0.28
+7f70c20eb000-7f70c20ec000 r--p 00015000 08:01 22319783                   /usr/lib/libjack.so.0.0.28
+7f70c20ec000-7f70c20ed000 rw-p 00016000 08:01 22319783                   /usr/lib/libjack.so.0.0.28
+7f70c20ed000-7f70c20f7000 rw-p 00000000 00:00 0 
+7f70c20f7000-7f70c216a000 r-xp 00000000 08:01 22311942                   /usr/lib/libsndfile.so.1.0.27
+7f70c216a000-7f70c236a000 ---p 00073000 08:01 22311942                   /usr/lib/libsndfile.so.1.0.27
+7f70c236a000-7f70c236c000 r--p 00073000 08:01 22311942                   /usr/lib/libsndfile.so.1.0.27
+7f70c236c000-7f70c236d000 rw-p 00075000 08:01 22311942                   /usr/lib/libsndfile.so.1.0.27
+7f70c236d000-7f70c236f000 rw-p 00000000 00:00 0 
+7f70c236f000-7f70c237f000 r-xp 00000000 08:01 22309948                   /usr/lib/libavahi-client.so.3.2.9
+7f70c237f000-7f70c257e000 ---p 00010000 08:01 22309948                   /usr/lib/libavahi-client.so.3.2.9
+7f70c257e000-7f70c257f000 r--p 0000f000 08:01 22309948                   /usr/lib/libavahi-client.so.3.2.9
+7f70c257f000-7f70c2580000 rw-p 00010000 08:01 22309948                   /usr/lib/libavahi-client.so.3.2.9
+7f70c2580000-7f70c258c000 r-xp 00000000 08:01 22309945                   /usr/lib/libavahi-common.so.3.5.3
+7f70c258c000-7f70c278b000 ---p 0000c000 08:01 22309945                   /usr/lib/libavahi-common.so.3.5.3
+7f70c278b000-7f70c278c000 r--p 0000b000 08:01 22309945                   /usr/lib/libavahi-common.so.3.5.3
+7f70c278c000-7f70c278d000 rw-p 0000c000 08:01 22309945                   /usr/lib/libavahi-common.so.3.5.3
+7f70c278d000-7f70c27ef000 r-xp 00000000 08:01 19529926                   /home/chad/beatboxchad_live/target/native/linux/x86_64/libscsynth.so
+7f70c27ef000-7f70c29ef000 ---p 00062000 08:01 19529926                   /home/chad/beatboxchad_live/target/native/linux/x86_64/libscsynth.so
+7f70c29ef000-7f70c29f1000 r--p 00062000 08:01 19529926                   /home/chad/beatboxchad_live/target/native/linux/x86_64/libscsynth.so
+7f70c29f1000-7f70c29f3000 rw-p 00064000 08:01 19529926                   /home/chad/beatboxchad_live/target/native/linux/x86_64/libscsynth.so
+7f70c29f3000-7f70c2a13000 rw-p 00000000 00:00 0 
+7f70c2a13000-7f70c2a2a000 r-xp 00000000 00:24 100072                     /tmp/jna/jna2683472090592993666.tmp (deleted)
+7f70c2a2a000-7f70c2c29000 ---p 00017000 00:24 100072                     /tmp/jna/jna2683472090592993666.tmp (deleted)
+7f70c2c29000-7f70c2c2a000 r--p 00016000 00:24 100072                     /tmp/jna/jna2683472090592993666.tmp (deleted)
+7f70c2c2a000-7f70c2c2b000 rw-p 00017000 00:24 100072                     /tmp/jna/jna2683472090592993666.tmp (deleted)
+7f70c2c2b000-7f70c2e2b000 rw-p 00000000 00:00 0 
+7f70c2e2b000-7f70c302b000 rw-p 00000000 00:00 0 
+7f70c302b000-7f70c303c000 r-xp 00000000 08:01 22944041                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnio.so
+7f70c303c000-7f70c323b000 ---p 00011000 08:01 22944041                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnio.so
+7f70c323b000-7f70c323c000 r--p 00010000 08:01 22944041                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnio.so
+7f70c323c000-7f70c323d000 rw-p 00011000 08:01 22944041                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnio.so
+7f70c323d000-7f70c343d000 rw-p 00000000 00:00 0 
+7f70c343d000-7f70c3442000 r-xp 00000000 08:01 22309205                   /usr/lib/libXfixes.so.3.1.0
+7f70c3442000-7f70c3641000 ---p 00005000 08:01 22309205                   /usr/lib/libXfixes.so.3.1.0
+7f70c3641000-7f70c3642000 r--p 00004000 08:01 22309205                   /usr/lib/libXfixes.so.3.1.0
+7f70c3642000-7f70c3643000 rw-p 00005000 08:01 22309205                   /usr/lib/libXfixes.so.3.1.0
+7f70c3643000-7f70c364d000 r-xp 00000000 08:01 22310104                   /usr/lib/libXcursor.so.1.0.2
+7f70c364d000-7f70c384c000 ---p 0000a000 08:01 22310104                   /usr/lib/libXcursor.so.1.0.2
+7f70c384c000-7f70c384d000 r--p 00009000 08:01 22310104                   /usr/lib/libXcursor.so.1.0.2
+7f70c384d000-7f70c384e000 rw-p 0000a000 08:01 22310104                   /usr/lib/libXcursor.so.1.0.2
+7f70c384e000-7f70c38c0000 r-xp 00000000 08:01 22296666                   /usr/lib/libpcre.so.1.2.7
+7f70c38c0000-7f70c3abf000 ---p 00072000 08:01 22296666                   /usr/lib/libpcre.so.1.2.7
+7f70c3abf000-7f70c3ac0000 r--p 00071000 08:01 22296666                   /usr/lib/libpcre.so.1.2.7
+7f70c3ac0000-7f70c3ac1000 rw-p 00072000 08:01 22296666                   /usr/lib/libpcre.so.1.2.7
+7f70c3ac1000-7f70c3aeb000 r-xp 00000000 08:01 22308597                   /usr/lib/libgraphite2.so.3.0.1
+7f70c3aeb000-7f70c3cea000 ---p 0002a000 08:01 22308597                   /usr/lib/libgraphite2.so.3.0.1
+7f70c3cea000-7f70c3cec000 r--p 00029000 08:01 22308597                   /usr/lib/libgraphite2.so.3.0.1
+7f70c3cec000-7f70c3ced000 rw-p 0002b000 08:01 22308597                   /usr/lib/libgraphite2.so.3.0.1
+7f70c3ced000-7f70c3dfe000 r-xp 00000000 08:01 22296827                   /usr/lib/libglib-2.0.so.0.5000.2
+7f70c3dfe000-7f70c3ffd000 ---p 00111000 08:01 22296827                   /usr/lib/libglib-2.0.so.0.5000.2
+7f70c3ffd000-7f70c3ffe000 r--p 00110000 08:01 22296827                   /usr/lib/libglib-2.0.so.0.5000.2
+7f70c3ffe000-7f70c3fff000 rw-p 00111000 08:01 22296827                   /usr/lib/libglib-2.0.so.0.5000.2
+7f70c3fff000-7f70c4000000 rw-p 00000000 00:00 0 
+7f70c4000000-7f70c4021000 rw-p 00000000 00:00 0 
+7f70c4021000-7f70c8000000 ---p 00000000 00:00 0 
+7f70c8000000-7f70c8062000 rw-p 00000000 00:00 0 
+7f70c8062000-7f70cc000000 ---p 00000000 00:00 0 
+7f70cc000000-7f70cc021000 rw-p 00000000 00:00 0 
+7f70cc021000-7f70d0000000 ---p 00000000 00:00 0 
+7f70d0000000-7f70d0021000 rw-p 00000000 00:00 0 
+7f70d0021000-7f70d4000000 ---p 00000000 00:00 0 
+7f70d4000000-7f70d4021000 rw-p 00000000 00:00 0 
+7f70d4021000-7f70d8000000 ---p 00000000 00:00 0 
+7f70d8000000-7f70d8021000 rw-p 00000000 00:00 0 
+7f70d8021000-7f70dc000000 ---p 00000000 00:00 0 
+7f70dc000000-7f70dc0bf000 rw-p 00000000 00:00 0 
+7f70dc0bf000-7f70e0000000 ---p 00000000 00:00 0 
+7f70e0000000-7f70e137c000 rw-p 00000000 00:00 0 
+7f70e137c000-7f70e4000000 ---p 00000000 00:00 0 
+7f70e4000000-7f70e4021000 rw-p 00000000 00:00 0 
+7f70e4021000-7f70e8000000 ---p 00000000 00:00 0 
+7f70e8000000-7f70e8021000 rw-p 00000000 00:00 0 
+7f70e8021000-7f70ec000000 ---p 00000000 00:00 0 
+7f70ec000000-7f70ed91d000 rw-p 00000000 00:00 0 
+7f70ed91d000-7f70f0000000 ---p 00000000 00:00 0 
+7f70f0000000-7f70f090c000 rw-p 00000000 00:00 0 
+7f70f090c000-7f70f4000000 ---p 00000000 00:00 0 
+7f70f4000000-7f70f5ef3000 rw-p 00000000 00:00 0 
+7f70f5ef3000-7f70f8000000 ---p 00000000 00:00 0 
+7f70f8000000-7f70f9685000 rw-p 00000000 00:00 0 
+7f70f9685000-7f70fc000000 ---p 00000000 00:00 0 
+7f70fc007000-7f70fc00a000 ---p 00000000 00:00 0 
+7f70fc00a000-7f70fc108000 rw-p 00000000 00:00 0 
+7f70fc108000-7f70fc18c000 r-xp 00000000 08:01 22293654                   /usr/lib/libsystemd.so.0.17.0
+7f70fc18c000-7f70fc18d000 ---p 00084000 08:01 22293654                   /usr/lib/libsystemd.so.0.17.0
+7f70fc18d000-7f70fc190000 r--p 00084000 08:01 22293654                   /usr/lib/libsystemd.so.0.17.0
+7f70fc190000-7f70fc191000 rw-p 00087000 08:01 22293654                   /usr/lib/libsystemd.so.0.17.0
+7f70fc191000-7f70fc192000 rw-p 00000000 00:00 0 
+7f70fc1c1000-7f70fc246000 r-xp 00000000 08:01 22308602                   /usr/lib/libharfbuzz.so.0.10400.1
+7f70fc246000-7f70fc445000 ---p 00085000 08:01 22308602                   /usr/lib/libharfbuzz.so.0.10400.1
+7f70fc445000-7f70fc447000 r--p 00084000 08:01 22308602                   /usr/lib/libharfbuzz.so.0.10400.1
+7f70fc447000-7f70fc448000 rw-p 00086000 08:01 22308602                   /usr/lib/libharfbuzz.so.0.10400.1
+7f70fc448000-7f70fc47d000 r-xp 00000000 08:01 22305102                   /usr/lib/libpng16.so.16.28.0
+7f70fc47d000-7f70fc67c000 ---p 00035000 08:01 22305102                   /usr/lib/libpng16.so.16.28.0
+7f70fc67c000-7f70fc67d000 r--p 00034000 08:01 22305102                   /usr/lib/libpng16.so.16.28.0
+7f70fc67d000-7f70fc67e000 rw-p 00035000 08:01 22305102                   /usr/lib/libpng16.so.16.28.0
+7f70fc67e000-7f70fc68d000 r-xp 00000000 08:01 22288627                   /usr/lib/libbz2.so.1.0.6
+7f70fc68d000-7f70fc88c000 ---p 0000f000 08:01 22288627                   /usr/lib/libbz2.so.1.0.6
+7f70fc88c000-7f70fc88e000 rw-p 0000e000 08:01 22288627                   /usr/lib/libbz2.so.1.0.6
+7f70fc88e000-7f70fc8a4000 r-xp 00000000 08:01 22285852                   /usr/lib/libgcc_s.so.1
+7f70fc8a4000-7f70fcaa3000 ---p 00016000 08:01 22285852                   /usr/lib/libgcc_s.so.1
+7f70fcaa3000-7f70fcaa4000 r--p 00015000 08:01 22285852                   /usr/lib/libgcc_s.so.1
+7f70fcaa4000-7f70fcaa5000 rw-p 00016000 08:01 22285852                   /usr/lib/libgcc_s.so.1
+7f70fcaa5000-7f70fcb5f000 r-xp 00000000 08:01 22308616                   /usr/lib/libfreetype.so.6.13.0
+7f70fcb5f000-7f70fcd5f000 ---p 000ba000 08:01 22308616                   /usr/lib/libfreetype.so.6.13.0
+7f70fcd5f000-7f70fcd65000 r--p 000ba000 08:01 22308616                   /usr/lib/libfreetype.so.6.13.0
+7f70fcd65000-7f70fcd66000 rw-p 000c0000 08:01 22308616                   /usr/lib/libfreetype.so.6.13.0
+7f70fcd66000-7f70fcdc8000 r-xp 00000000 08:01 22944033                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libfontmanager.so
+7f70fcdc8000-7f70fcfc8000 ---p 00062000 08:01 22944033                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libfontmanager.so
+7f70fcfc8000-7f70fcfcb000 r--p 00062000 08:01 22944033                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libfontmanager.so
+7f70fcfcb000-7f70fcfcc000 rw-p 00065000 08:01 22944033                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libfontmanager.so
+7f70fcfcc000-7f70fd1cd000 rw-p 00000000 00:00 0 
+7f70fd1cd000-7f70fd1d2000 r-xp 00000000 08:01 22305251                   /usr/lib/libXdmcp.so.6.0.0
+7f70fd1d2000-7f70fd3d1000 ---p 00005000 08:01 22305251                   /usr/lib/libXdmcp.so.6.0.0
+7f70fd3d1000-7f70fd3d2000 r--p 00004000 08:01 22305251                   /usr/lib/libXdmcp.so.6.0.0
+7f70fd3d2000-7f70fd3d3000 rw-p 00005000 08:01 22305251                   /usr/lib/libXdmcp.so.6.0.0
+7f70fd3d3000-7f70fd3d5000 r-xp 00000000 08:01 22305255                   /usr/lib/libXau.so.6.0.0
+7f70fd3d5000-7f70fd5d5000 ---p 00002000 08:01 22305255                   /usr/lib/libXau.so.6.0.0
+7f70fd5d5000-7f70fd5d6000 r--p 00002000 08:01 22305255                   /usr/lib/libXau.so.6.0.0
+7f70fd5d6000-7f70fd5d7000 rw-p 00003000 08:01 22305255                   /usr/lib/libXau.so.6.0.0
+7f70fd5d7000-7f70fd5ff000 r-xp 00000000 08:01 22305316                   /usr/lib/libxcb.so.1.1.0
+7f70fd5ff000-7f70fd7fe000 ---p 00028000 08:01 22305316                   /usr/lib/libxcb.so.1.1.0
+7f70fd7fe000-7f70fd7ff000 r--p 00027000 08:01 22305316                   /usr/lib/libxcb.so.1.1.0
+7f70fd7ff000-7f70fd800000 rw-p 00028000 08:01 22305316                   /usr/lib/libxcb.so.1.1.0
+7f70fd800000-7f70fd80f000 r-xp 00000000 08:01 22310213                   /usr/lib/libXi.so.6.1.0
+7f70fd80f000-7f70fda0f000 ---p 0000f000 08:01 22310213                   /usr/lib/libXi.so.6.1.0
+7f70fda0f000-7f70fda10000 r--p 0000f000 08:01 22310213                   /usr/lib/libXi.so.6.1.0
+7f70fda10000-7f70fda11000 rw-p 00010000 08:01 22310213                   /usr/lib/libXi.so.6.1.0
+7f70fda11000-7f70fda16000 r-xp 00000000 08:01 22310427                   /usr/lib/libXtst.so.6.1.0
+7f70fda16000-7f70fdc15000 ---p 00005000 08:01 22310427                   /usr/lib/libXtst.so.6.1.0
+7f70fdc15000-7f70fdc16000 r--p 00004000 08:01 22310427                   /usr/lib/libXtst.so.6.1.0
+7f70fdc16000-7f70fdc17000 rw-p 00005000 08:01 22310427                   /usr/lib/libXtst.so.6.1.0
+7f70fdc17000-7f70fdc20000 r-xp 00000000 08:01 22308525                   /usr/lib/libXrender.so.1.3.0
+7f70fdc20000-7f70fde20000 ---p 00009000 08:01 22308525                   /usr/lib/libXrender.so.1.3.0
+7f70fde20000-7f70fde21000 r--p 00009000 08:01 22308525                   /usr/lib/libXrender.so.1.3.0
+7f70fde21000-7f70fde22000 rw-p 0000a000 08:01 22308525                   /usr/lib/libXrender.so.1.3.0
+7f70fde22000-7f70fdf5b000 r-xp 00000000 08:01 22308427                   /usr/lib/libX11.so.6.3.0
+7f70fdf5b000-7f70fe15b000 ---p 00139000 08:01 22308427                   /usr/lib/libX11.so.6.3.0
+7f70fe15b000-7f70fe15c000 r--p 00139000 08:01 22308427                   /usr/lib/libX11.so.6.3.0
+7f70fe15c000-7f70fe161000 rw-p 0013a000 08:01 22308427                   /usr/lib/libX11.so.6.3.0
+7f70fe161000-7f70fe172000 r-xp 00000000 08:01 22308592                   /usr/lib/libXext.so.6.4.0
+7f70fe172000-7f70fe371000 ---p 00011000 08:01 22308592                   /usr/lib/libXext.so.6.4.0
+7f70fe371000-7f70fe372000 r--p 00010000 08:01 22308592                   /usr/lib/libXext.so.6.4.0
+7f70fe372000-7f70fe373000 rw-p 00011000 08:01 22308592                   /usr/lib/libXext.so.6.4.0
+7f70fe37b000-7f70fe37c000 rwxp 00000000 00:00 0 
+7f70fe37c000-7f70fe398000 r--s 00393000 08:01 22944066                   /usr/lib/jvm/java-8-openjdk/jre/lib/ext/cldrdata.jar
+7f70fe398000-7f70fe3a2000 r--s 00116000 08:01 22944074                   /usr/lib/jvm/java-8-openjdk/jre/lib/ext/localedata.jar
+7f70fe3a2000-7f70fe3f5000 r-xp 00000000 08:01 22944057                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt_xawt.so
+7f70fe3f5000-7f70fe5f4000 ---p 00053000 08:01 22944057                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt_xawt.so
+7f70fe5f4000-7f70fe5f5000 r--p 00052000 08:01 22944057                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt_xawt.so
+7f70fe5f5000-7f70fe5f8000 rw-p 00053000 08:01 22944057                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt_xawt.so
+7f70fe5f8000-7f70fe5f9000 rw-p 00000000 00:00 0 
+7f70fe5f9000-7f70fe699000 r-xp 00000000 08:01 22944042                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt.so
+7f70fe699000-7f70fe898000 ---p 000a0000 08:01 22944042                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt.so
+7f70fe898000-7f70fe899000 r--p 0009f000 08:01 22944042                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt.so
+7f70fe899000-7f70fe8a4000 rw-p 000a0000 08:01 22944042                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libawt.so
+7f70fe8a4000-7f70feac9000 rw-p 00000000 00:00 0 
+7f70feac9000-7f70feacc000 ---p 00000000 00:00 0 
+7f70feacc000-7f70febca000 rw-p 00000000 00:00 0 
+7f70febca000-7f70febcd000 ---p 00000000 00:00 0 
+7f70febcd000-7f70feccb000 rw-p 00000000 00:00 0 
+7f70feccb000-7f70fecce000 ---p 00000000 00:00 0 
+7f70fecce000-7f70fedcc000 rw-p 00000000 00:00 0 
+7f70fedcc000-7f70fedcf000 ---p 00000000 00:00 0 
+7f70fedcf000-7f70feecd000 rw-p 00000000 00:00 0 
+7f70feecd000-7f70feed0000 ---p 00000000 00:00 0 
+7f70feed0000-7f70fefce000 rw-p 00000000 00:00 0 
+7f70fefce000-7f70fefd1000 ---p 00000000 00:00 0 
+7f70fefd1000-7f70ff0cf000 rw-p 00000000 00:00 0 
+7f70ff0cf000-7f70ff0e5000 r-xp 00000000 08:01 22944044                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnet.so
+7f70ff0e5000-7f70ff2e4000 ---p 00016000 08:01 22944044                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnet.so
+7f70ff2e4000-7f70ff2e5000 r--p 00015000 08:01 22944044                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnet.so
+7f70ff2e5000-7f70ff2e6000 rw-p 00016000 08:01 22944044                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libnet.so
+7f70ff2e6000-7f70ff2e9000 ---p 00000000 00:00 0 
+7f70ff2e9000-7f70ff3e7000 rw-p 00000000 00:00 0 
+7f70ff3e7000-7f70ff3fa000 r--s 00346000 08:01 22943999                   /usr/lib/jvm/java-8-openjdk/jre/lib/resources.jar
+7f70ff3fa000-7f70ff3fd000 ---p 00000000 00:00 0 
+7f70ff3fd000-7f70ff6fb000 rw-p 00000000 00:00 0 
+7f70ff6fb000-7f70ff8fb000 rw-p 00000000 00:00 0 
+7f70ff8fb000-7f70ffafb000 rw-p 00000000 00:00 0 
+7f70ffafb000-7f70ffafc000 ---p 00000000 00:00 0 
+7f70ffafc000-7f70ffbfc000 rw-p 00000000 00:00 0 
+7f70ffbfc000-7f70ffbff000 ---p 00000000 00:00 0 
+7f70ffbff000-7f70ffcfd000 rw-p 00000000 00:00 0 
+7f70ffcfd000-7f70ffd00000 ---p 00000000 00:00 0 
+7f70ffd00000-7f70ffdfe000 rw-p 00000000 00:00 0 
+7f70ffdfe000-7f70ffe01000 ---p 00000000 00:00 0 
+7f70ffe01000-7f70ffeff000 rw-p 00000000 00:00 0 
+7f70ffeff000-7f70fff02000 ---p 00000000 00:00 0 
+7f70fff02000-7f7100000000 rw-p 00000000 00:00 0 
+7f7100000000-7f7100021000 rw-p 00000000 00:00 0 
+7f7100021000-7f7104000000 ---p 00000000 00:00 0 
+7f7104000000-7f7104021000 rw-p 00000000 00:00 0 
+7f7104021000-7f7108000000 ---p 00000000 00:00 0 
+7f7108000000-7f7108021000 rw-p 00000000 00:00 0 
+7f7108021000-7f710c000000 ---p 00000000 00:00 0 
+7f710c000000-7f710c021000 rw-p 00000000 00:00 0 
+7f710c021000-7f7110000000 ---p 00000000 00:00 0 
+7f7110000000-7f7110021000 rw-p 00000000 00:00 0 
+7f7110021000-7f7114000000 ---p 00000000 00:00 0 
+7f7114000000-7f7114005000 r--s 00098000 08:01 22943997                   /usr/lib/jvm/java-8-openjdk/jre/lib/jsse.jar
+7f7114005000-7f7114006000 r--s 00001000 08:01 19532185                   /home/chad/.m2/repository/org/clojure/core.cache/0.6.5/core.cache-0.6.5.jar
+7f7114006000-7f7114007000 r--s 00005000 08:01 10749260                   /home/chad/.m2/repository/clj-native/clj-native/0.9.3/clj-native-0.9.3.jar
+7f7114007000-7f7114008000 r--s 00001000 08:01 10749251                   /home/chad/.m2/repository/org/clojure/data.json/0.2.3/data.json-0.2.3.jar
+7f7114008000-7f7114009000 r--s 00001000 08:01 10749267                   /home/chad/.m2/repository/overtone/midi-clj/0.5.0/midi-clj-0.5.0.jar
+7f7114009000-7f711400a000 r--s 00000000 08:01 10749275                   /home/chad/.m2/repository/clj-glob/clj-glob/1.0.0/clj-glob-1.0.0.jar
+7f711400a000-7f711400b000 r--s 00001000 08:01 19532189                   /home/chad/.m2/repository/org/clojure/data.priority-map/0.0.7/data.priority-map-0.0.7.jar
+7f711400b000-7f711400f000 r--s 0002f000 08:01 10749253                   /home/chad/.m2/repository/javax/jmdns/jmdns/3.4.1/jmdns-3.4.1.jar
+7f711400f000-7f7114014000 r--s 00030000 08:01 19532191                   /home/chad/.m2/repository/org/ow2/asm/asm-all/4.2/asm-all-4.2.jar
+7f7114014000-7f711401b000 r--s 0006e000 08:01 18878013                   /home/chad/.m2/repository/overtone/overtone/0.10.2/overtone-0.10.2.jar
+7f711401b000-7f711405e000 r--s 00332000 08:01 9835576                    /home/chad/.m2/repository/org/clojure/clojure/1.8.0/clojure-1.8.0.jar
+7f711405e000-7f7114061000 ---p 00000000 00:00 0 
+7f7114061000-7f711415f000 rw-p 00000000 00:00 0 
+7f711415f000-7f7114162000 ---p 00000000 00:00 0 
+7f7114162000-7f7118000000 rw-p 00000000 00:00 0 
+7f7118000000-7f7118021000 rw-p 00000000 00:00 0 
+7f7118021000-7f711c000000 ---p 00000000 00:00 0 
+7f711c000000-7f711c021000 rw-p 00000000 00:00 0 
+7f711c021000-7f7120000000 ---p 00000000 00:00 0 
+7f7120000000-7f7120021000 rw-p 00000000 00:00 0 
+7f7120021000-7f7124000000 ---p 00000000 00:00 0 
+7f7124000000-7f7124021000 rw-p 00000000 00:00 0 
+7f7124021000-7f7128000000 ---p 00000000 00:00 0 
+7f7128000000-7f7128021000 rw-p 00000000 00:00 0 
+7f7128021000-7f712c000000 ---p 00000000 00:00 0 
+7f712c000000-7f712c021000 rw-p 00000000 00:00 0 
+7f712c021000-7f7130000000 ---p 00000000 00:00 0 
+7f7130000000-7f7130021000 rw-p 00000000 00:00 0 
+7f7130021000-7f7134000000 ---p 00000000 00:00 0 
+7f7134000000-7f7134005000 r--s 0003d000 08:01 10749254                   /home/chad/.m2/repository/commons-net/commons-net/3.0.1/commons-net-3.0.1.jar
+7f7134005000-7f7134009000 r--s 00b46000 08:01 10749272                   /home/chad/.m2/repository/overtone/scsynth/3.5.7.0/scsynth-3.5.7.0.jar
+7f7134009000-7f713400a000 r--s 00001000 08:01 19532184                   /home/chad/.m2/repository/org/clojure/core.memoize/0.5.9/core.memoize-0.5.9.jar
+7f713400a000-7f713400b000 r--s 00001000 08:01 10749271                   /home/chad/.m2/repository/overtone/libs.handlers/0.2.0/libs.handlers-0.2.0.jar
+7f713400b000-7f713400c000 r--s 00004000 08:01 10749268                   /home/chad/.m2/repository/overtone/osc-clj/0.9.0/osc-clj-0.9.0.jar
+7f713400c000-7f713400e000 r--s 00000000 08:01 10749263                   /home/chad/.m2/repository/overtone/byte-spec/0.3.1/byte-spec-0.3.1.jar
+7f713400e000-7f713400f000 r--s 00002000 08:01 10749277                   /home/chad/.m2/repository/clojure-complete/clojure-complete/0.2.4/clojure-complete-0.2.4.jar
+7f713400f000-7f7134011000 r--s 0000d000 08:01 19532181                   /home/chad/.m2/repository/org/clojure/core.async/0.2.395/core.async-0.2.395.jar
+7f7134011000-7f7134012000 r--s 00009000 08:01 10749258                   /home/chad/.m2/repository/org/clojure/tools.nrepl/0.2.12/tools.nrepl-0.2.12.jar
+7f7134012000-7f7134013000 r--s 00001000 08:01 10749262                   /home/chad/.m2/repository/overtone/at-at/1.2.0/at-at-1.2.0.jar
+7f7134013000-7f7134014000 r--s 00007000 08:01 19532183                   /home/chad/.m2/repository/org/clojure/tools.analyzer/0.6.9/tools.analyzer-0.6.9.jar
+7f7134014000-7f7134018000 r--s 000f3000 08:01 10749250                   /home/chad/.m2/repository/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar
+7f7134018000-7f71341b0000 r--p 00000000 08:01 22319492                   /usr/lib/locale/locale-archive
+7f71341b0000-7f71341b3000 ---p 00000000 00:00 0 
+7f71341b3000-7f71342b1000 rw-p 00000000 00:00 0 
+7f71342b1000-7f71342b4000 ---p 00000000 00:00 0 
+7f71342b4000-7f71343b2000 rw-p 00000000 00:00 0 
+7f71343b2000-7f71343b3000 ---p 00000000 00:00 0 
+7f71343b3000-7f7135000000 rw-p 00000000 00:00 0 
+7f7135000000-7f71361d0000 rwxp 00000000 00:00 0 
+7f71361d0000-7f7144000000 ---p 00000000 00:00 0 
+7f7144000000-7f7144cb1000 rw-p 00000000 00:00 0 
+7f7144cb1000-7f7148000000 ---p 00000000 00:00 0 
+7f7148000000-7f7148001000 r--s 00008000 08:01 19532182                   /home/chad/.m2/repository/org/clojure/tools.analyzer.jvm/0.6.10/tools.analyzer.jvm-0.6.10.jar
+7f7148001000-7f7148002000 r--s 0000a000 08:01 19532193                   /home/chad/.m2/repository/org/clojure/tools.reader/1.0.0-beta2/tools.reader-1.0.0-beta2.jar
+7f7148002000-7f7149104000 rw-p 00000000 00:00 0 
+7f7149104000-7f71492d2000 r--s 03bf3000 08:01 22944005                   /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+7f71492d2000-7f7149f22000 rw-p 00000000 00:00 0 
+7f7149f22000-7f7149f23000 ---p 00000000 00:00 0 
+7f7149f23000-7f714a023000 rw-p 00000000 00:00 0 
+7f714a023000-7f714a024000 ---p 00000000 00:00 0 
+7f714a024000-7f714a124000 rw-p 00000000 00:00 0 
+7f714a124000-7f714a125000 ---p 00000000 00:00 0 
+7f714a125000-7f714a225000 rw-p 00000000 00:00 0 
+7f714a225000-7f714a226000 ---p 00000000 00:00 0 
+7f714a226000-7f714a326000 rw-p 00000000 00:00 0 
+7f714a326000-7f714a327000 ---p 00000000 00:00 0 
+7f714a327000-7f714a427000 rw-p 00000000 00:00 0 
+7f714a427000-7f714a428000 ---p 00000000 00:00 0 
+7f714a428000-7f714a528000 rw-p 00000000 00:00 0 
+7f714a528000-7f714a529000 ---p 00000000 00:00 0 
+7f714a529000-7f714a629000 rw-p 00000000 00:00 0 
+7f714a629000-7f714a62a000 ---p 00000000 00:00 0 
+7f714a62a000-7f714a74f000 rw-p 00000000 00:00 0 
+7f714a74f000-7f714a9bc000 ---p 00000000 00:00 0 
+7f714a9bc000-7f714a9e1000 rw-p 00000000 00:00 0 
+7f714a9e1000-7f714ac4d000 ---p 00000000 00:00 0 
+7f714ac4d000-7f714ad96000 rw-p 00000000 00:00 0 
+7f714ad96000-7f714addf000 rw-p 00000000 00:00 0 
+7f714addf000-7f714b157000 ---p 00000000 00:00 0 
+7f714b157000-7f714b15f000 r-xp 00000000 08:01 22944037                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libzip.so
+7f714b15f000-7f714b35e000 ---p 00008000 08:01 22944037                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libzip.so
+7f714b35e000-7f714b35f000 r--p 00007000 08:01 22944037                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libzip.so
+7f714b35f000-7f714b360000 rw-p 00008000 08:01 22944037                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libzip.so
+7f714b360000-7f714b36a000 r-xp 00000000 08:01 22285531                   /usr/lib/libnss_files-2.24.so
+7f714b36a000-7f714b56a000 ---p 0000a000 08:01 22285531                   /usr/lib/libnss_files-2.24.so
+7f714b56a000-7f714b56b000 r--p 0000a000 08:01 22285531                   /usr/lib/libnss_files-2.24.so
+7f714b56b000-7f714b56c000 rw-p 0000b000 08:01 22285531                   /usr/lib/libnss_files-2.24.so
+7f714b56c000-7f714b572000 rw-p 00000000 00:00 0 
+7f714b572000-7f714b59f000 r-xp 00000000 08:01 22944030                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjava.so
+7f714b59f000-7f714b79e000 ---p 0002d000 08:01 22944030                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjava.so
+7f714b79e000-7f714b79f000 r--p 0002c000 08:01 22944030                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjava.so
+7f714b79f000-7f714b7a1000 rw-p 0002d000 08:01 22944030                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libjava.so
+7f714b7a1000-7f714b7ae000 r-xp 00000000 08:01 22944031                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libverify.so
+7f714b7ae000-7f714b9ad000 ---p 0000d000 08:01 22944031                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libverify.so
+7f714b9ad000-7f714b9af000 r--p 0000c000 08:01 22944031                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libverify.so
+7f714b9af000-7f714b9b0000 rw-p 0000e000 08:01 22944031                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/libverify.so
+7f714b9b0000-7f714b9b7000 r-xp 00000000 08:01 22285539                   /usr/lib/librt-2.24.so
+7f714b9b7000-7f714bbb6000 ---p 00007000 08:01 22285539                   /usr/lib/librt-2.24.so
+7f714bbb6000-7f714bbb7000 r--p 00006000 08:01 22285539                   /usr/lib/librt-2.24.so
+7f714bbb7000-7f714bbb8000 rw-p 00007000 08:01 22285539                   /usr/lib/librt-2.24.so
+7f714bbb8000-7f714bcbb000 r-xp 00000000 08:01 22285536                   /usr/lib/libm-2.24.so
+7f714bcbb000-7f714beba000 ---p 00103000 08:01 22285536                   /usr/lib/libm-2.24.so
+7f714beba000-7f714bebb000 r--p 00102000 08:01 22285536                   /usr/lib/libm-2.24.so
+7f714bebb000-7f714bebc000 rw-p 00103000 08:01 22285536                   /usr/lib/libm-2.24.so
+7f714bebc000-7f714cae7000 r-xp 00000000 08:01 22944062                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/server/libjvm.so
+7f714cae7000-7f714cce6000 ---p 00c2b000 08:01 22944062                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/server/libjvm.so
+7f714cce6000-7f714cd7a000 r--p 00c2a000 08:01 22944062                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/server/libjvm.so
+7f714cd7a000-7f714cda3000 rw-p 00cbe000 08:01 22944062                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/server/libjvm.so
+7f714cda3000-7f714cdd3000 rw-p 00000000 00:00 0 
+7f714cdd3000-7f714cf68000 r-xp 00000000 08:01 22285478                   /usr/lib/libc-2.24.so
+7f714cf68000-7f714d167000 ---p 00195000 08:01 22285478                   /usr/lib/libc-2.24.so
+7f714d167000-7f714d16b000 r--p 00194000 08:01 22285478                   /usr/lib/libc-2.24.so
+7f714d16b000-7f714d16d000 rw-p 00198000 08:01 22285478                   /usr/lib/libc-2.24.so
+7f714d16d000-7f714d171000 rw-p 00000000 00:00 0 
+7f714d171000-7f714d173000 r-xp 00000000 08:01 22285535                   /usr/lib/libdl-2.24.so
+7f714d173000-7f714d373000 ---p 00002000 08:01 22285535                   /usr/lib/libdl-2.24.so
+7f714d373000-7f714d374000 r--p 00002000 08:01 22285535                   /usr/lib/libdl-2.24.so
+7f714d374000-7f714d375000 rw-p 00003000 08:01 22285535                   /usr/lib/libdl-2.24.so
+7f714d375000-7f714d382000 r-xp 00000000 08:01 22944061                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/jli/libjli.so
+7f714d382000-7f714d581000 ---p 0000d000 08:01 22944061                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/jli/libjli.so
+7f714d581000-7f714d582000 r--p 0000c000 08:01 22944061                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/jli/libjli.so
+7f714d582000-7f714d583000 rw-p 0000d000 08:01 22944061                   /usr/lib/jvm/java-8-openjdk/jre/lib/amd64/jli/libjli.so
+7f714d583000-7f714d598000 r-xp 00000000 08:01 22293936                   /usr/lib/libz.so.1.2.8
+7f714d598000-7f714d797000 ---p 00015000 08:01 22293936                   /usr/lib/libz.so.1.2.8
+7f714d797000-7f714d798000 r--p 00014000 08:01 22293936                   /usr/lib/libz.so.1.2.8
+7f714d798000-7f714d799000 rw-p 00015000 08:01 22293936                   /usr/lib/libz.so.1.2.8
+7f714d799000-7f714d7b1000 r-xp 00000000 08:01 22285459                   /usr/lib/libpthread-2.24.so
+7f714d7b1000-7f714d9b0000 ---p 00018000 08:01 22285459                   /usr/lib/libpthread-2.24.so
+7f714d9b0000-7f714d9b1000 r--p 00017000 08:01 22285459                   /usr/lib/libpthread-2.24.so
+7f714d9b1000-7f714d9b2000 rw-p 00018000 08:01 22285459                   /usr/lib/libpthread-2.24.so
+7f714d9b2000-7f714d9b6000 rw-p 00000000 00:00 0 
+7f714d9b6000-7f714d9d9000 r-xp 00000000 08:01 22285477                   /usr/lib/ld-2.24.so
+7f714d9d9000-7f714daa4000 rw-p 00000000 00:00 0 
+7f714daa4000-7f714daa7000 ---p 00000000 00:00 0 
+7f714daa7000-7f714dba7000 rw-p 00000000 00:00 0 
+7f714dba7000-7f714dbab000 r--s 00b6f000 08:01 10749273                   /home/chad/.m2/repository/overtone/scsynth-extras/3.5.7.0/scsynth-extras-3.5.7.0.jar
+7f714dbab000-7f714dbcc000 rw-p 00000000 00:00 0 
+7f714dbcc000-7f714dbd4000 rw-s 00000000 00:24 100600                     /tmp/hsperfdata_chad/1165
+7f714dbd4000-7f714dbd5000 rw-p 00000000 00:00 0 
+7f714dbd5000-7f714dbd6000 r--p 00000000 00:00 0 
+7f714dbd6000-7f714dbd8000 rw-p 00000000 00:00 0 
+7f714dbd8000-7f714dbd9000 r--p 00022000 08:01 22285477                   /usr/lib/ld-2.24.so
+7f714dbd9000-7f714dbda000 rw-p 00023000 08:01 22285477                   /usr/lib/ld-2.24.so
+7f714dbda000-7f714dbdb000 rw-p 00000000 00:00 0 
+7ffff738f000-7ffff73b1000 rw-p 00000000 00:00 0                          [stack]
+7ffff73cf000-7ffff73d1000 r--p 00000000 00:00 0                          [vvar]
+7ffff73d1000-7ffff73d3000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Dclojure.compile.path=/home/chad/beatboxchad_live/target/classes -Dbeatboxchad_live.version=0.2 -Dclojure.debug=false -Djava.library.path=/home/chad/beatboxchad_live/target/native/linux/x86_64 
+java_command: clojure.main -i /tmp/form-init5394494486846715684.clj
+java_class_path (initial): /home/chad/beatboxchad_live/test:/home/chad/beatboxchad_live/src:/home/chad/beatboxchad_live/dev-resources:/home/chad/beatboxchad_live/resources:/home/chad/beatboxchad_live/target/classes:/home/chad/.m2/repository/org/clojure/clojure/1.8.0/clojure-1.8.0.jar:/home/chad/.m2/repository/overtone/scsynth-extras/3.5.7.0/scsynth-extras-3.5.7.0.jar:/home/chad/.m2/repository/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar:/home/chad/.m2/repository/org/clojure/tools.reader/1.0.0-beta2/tools.reader-1.0.0-beta2.jar:/home/chad/.m2/repository/org/clojure/tools.analyzer.jvm/0.6.10/tools.analyzer.jvm-0.6.10.jar:/home/chad/.m2/repository/org/clojure/tools.analyzer/0.6.9/tools.analyzer-0.6.9.jar:/home/chad/.m2/repository/overtone/at-at/1.2.0/at-at-1.2.0.jar:/home/chad/.m2/repository/org/clojure/tools.nrepl/0.2.12/tools.nrepl-0.2.12.jar:/home/chad/.m2/repository/org/clojure/core.async/0.2.395/core.async-0.2.395.jar:/home/chad/.m2/repository/clojure-complete/clojure-complete/0.2.4/clojure-complete-0.2.4.jar:/home/chad/.m2/repository/overtone/byte-spec/0.3.1/byte-spec-0.3.1.jar:/home/chad/.m2/repository/overtone/osc-clj/0.9.0/osc-clj-0.9.0.jar:/home/chad/.m2/repository/overtone/libs.handlers/0.2.0/libs.handlers-0.2.0.jar:/home/chad/.m2/repository/org/clojure/core.memoize/0.5.9/core.memoize-0.5.9.jar:/home/chad/.m2/repository/overtone/scsynth/3.5.7.0/scsynth-3.5.7.0.jar:/home/chad/.m2/repository/overtone/overtone/0.10.2/overtone-0.10.2.jar:/home/chad/.m2/repository/commons-net/commons-net/3.0.1/commons-net-3.0.1.jar:/home/chad/.m2/repository/org/ow2/asm/asm-all/4.2/asm-all-4.2.jar:/home/chad/.m2/repository/javax/jmdns/jmdns/3.4.1/jmdns-3.4.1.jar:/home/chad/.m2/repository/org/clojure/data.priority-map/0.0.7/data.priority-map-0.0.7.jar:/home/chad/.m2/repository/clj-glob/clj-glob/1.0.0/clj-glob-1.0.0.jar:/home/chad/.m2/repository/overtone/midi-clj/0.5.0/midi-clj-0.5.0.jar:/home/chad/.m2/repository/org/clojure/data.json/0.2.3/data.json-0.2.3.jar:/home/chad/.m2/repositor
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=/home/chad/.lein/self-installs/leiningen-2.7.1-standalone.jar
+PATH=/home/chad/.rvm/gems/ruby-2.2.4/bin:/home/chad/.rvm/gems/ruby-2.2.4@global/bin:/home/chad/.rvm/rubies/ruby-2.2.4/bin:/usr/local/sbin:/bin:/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/chad/.rvm/bin
+SHELL=/bin/zsh
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa2d580], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa2d580], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x881ab0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x881ab0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x881ab0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x881ab0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x881980], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x881df0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x881df0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x881df0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x881df0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:LSB_VERSION=1.4
+DISTRIB_ID=Arch
+DISTRIB_RELEASE=rolling
+DISTRIB_DESCRIPTION="Arch Linux"
+
+uname:Linux 4.8.13-1-ARCH #1 SMP PREEMPT Fri Dec 9 07:24:34 CET 2016 x86_64
+libc:glibc 2.24 NPTL 2.24 
+rlimit: STACK 8192k, CORE infinity, NPROC 31484, NOFILE 4096, AS infinity
+load average:0.26 0.20 0.27
+
+/proc/meminfo:
+MemTotal:        8069272 kB
+MemFree:         4141720 kB
+MemAvailable:    5802128 kB
+Buffers:          150260 kB
+Cached:          1764924 kB
+SwapCached:            0 kB
+Active:          2542540 kB
+Inactive:        1074332 kB
+Active(anon):    1634380 kB
+Inactive(anon):   191652 kB
+Active(file):     908160 kB
+Inactive(file):   882680 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       8275964 kB
+SwapFree:        8275964 kB
+Dirty:               352 kB
+Writeback:             0 kB
+AnonPages:       1680064 kB
+Mapped:           288936 kB
+Shmem:            124348 kB
+Slab:             204488 kB
+SReclaimable:     174428 kB
+SUnreclaim:        30060 kB
+KernelStack:        5824 kB
+PageTables:        14580 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    12310600 kB
+Committed_AS:    3525620 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    919552 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      119312 kB
+DirectMap2M:     8159232 kB
+
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3610QM CPU @ 2.30GHz
+stepping	: 9
+microcode	: 0x12
+cpu MHz		: 1301.751
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4591.79
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3610QM CPU @ 2.30GHz
+stepping	: 9
+microcode	: 0x12
+cpu MHz		: 1398.193
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4592.96
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3610QM CPU @ 2.30GHz
+stepping	: 9
+microcode	: 0x12
+cpu MHz		: 1302.172
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4592.01
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3610QM CPU @ 2.30GHz
+stepping	: 9
+microcode	: 0x12
+cpu MHz		: 1248.406
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4592.03
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 4
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3610QM CPU @ 2.30GHz
+stepping	: 9
+microcode	: 0x12
+cpu MHz		: 1200.256
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4593.69
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 5
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3610QM CPU @ 2.30GHz
+stepping	: 9
+microcode	: 0x12
+cpu MHz		: 1259.497
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4592.17
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 6
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3610QM CPU @ 2.30GHz
+stepping	: 9
+microcode	: 0x12
+cpu MHz		: 1300.488
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4592.18
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 7
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3610QM CPU @ 2.30GHz
+stepping	: 9
+microcode	: 0x12
+cpu MHz		: 1199.975
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 7
+initial apicid	: 7
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4592.18
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 8069272k(4141720k free), swap 8275964k(8275964k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.112-b15) for linux-amd64 JRE (1.8.0_112-b15), built on Oct 23 2016 10:14:19 by "builduser" with gcc 6.2.1 20160830
+
+time: Thu Jan 19 17:43:40 2017
+elapsed time: 153 seconds (0d 0h 2m 33s)
+

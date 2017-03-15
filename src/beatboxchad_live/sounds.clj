@@ -4,19 +4,23 @@
   ] 
  )
 
-(def korg (first (filter #(= (:description %) "microKEY-37, USB MIDI, microKEY-37") (midi-connected-devices))))
 
 
 (definst guitar []
   (sound-in 0)
   )
 (guitar)
+(voice1)
+(clear-fx voice1)
 
 (definst voice1 []
   (let [sig (sound-in:ar 1)]
     sig
     )
   )
+(inst-fx! guitar fx-distortion-tubescreamer)
+(inst-fx! guitar fx-echo)
+(clear-fx guitar)
 (voice1)
 (inst-fx! voice1 fx-freeverb)
 (inst-volume! voice1 10)
@@ -66,6 +70,7 @@
 (inst-fx! ding fx-freeverb)
 (inst-fx! ding fx-distortion)
 (clear-fx voice1)
+(clear-fx ding)
 
 (inst-fx! voice1 fx-echo)
 (inst-fx! voice1 fx-distortion)
@@ -87,6 +92,7 @@
     )
   )
 
+(harmonize-input)
 (inst-fx! harmonize-input fx-echo)
 (inst-fx! harmonize-input fx-distortion)
 (clear-fx harmonize-input)
