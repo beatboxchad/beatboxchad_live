@@ -5,8 +5,8 @@
    ]
   )
 
+(def overtone-osc (osc-server 9960 "osc-overtone"))
 (defn osc-up []
-  (def overtone-osc (osc-server 9960 "osc-overtone"))
   )
 
 (defn osc-down []

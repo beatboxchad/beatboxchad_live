@@ -1,16 +1,18 @@
-(ns beatboxchad-live.core
+(ns beatboxchad-live.util
   [:require 
-   [overtone.core :refer :all]
-   [mount.core :as mount]
    [me.raynes.conch.low-level :as shell]
-   [beatboxchad-live.sooperlooper :as sooperlooper]
-   [beatboxchad-live.util :as util]
    ]
   )
 
-(def total-sc-ins (+ (util/num-hw-inputs) sooperlooper/loop-count))
-
-(mount/defstate sc-up :start (boot-external-server 44100 [:max-input-bus total-sc-ins]) :stop (kill-server))
+(defn num-hw-inputs 
+  "how many inputs do we have on the interface?"
+  []
+  (let [port-list      (shell/stream-to-string (shell/proc "jack_lsp") :out)
+        system-ins     (re-seq #"system:capture_[0-9]*" port-list)
+        ]
+    (count system-ins)
+    )
+  )
 
 
 ;(defn- connect-jack-ports
@@ -56,5 +58,3 @@
 ;    )
 ;  )
 ;
-
-;(mount/defstate jack-connections :start (connect-sooperlooper-jack) :stop ())

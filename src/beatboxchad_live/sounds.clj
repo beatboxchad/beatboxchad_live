@@ -1,6 +1,7 @@
 (ns beatboxchad-live.sounds
  [:require 
   [overtone.core :refer :all]
+  [beatboxchad-live.core :refer :all]
   ] 
  )
 

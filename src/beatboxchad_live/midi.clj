@@ -5,7 +5,7 @@
    ]
   )
 
-; midi devices I own FIXME nullpointer when device not connected
+; midi devices I own FIXME nullpointer when device not connected. do a rescue. 
 ;(def microkey (midi-mk-full-device-key (midi-find-connected-device "microKEY37")))
 ;(def v49      (midi-mk-full-device-key (midi-find-connected-device "V49")))
 ;(def fcb      (midi-mk-full-device-key (midi-find-connected-device "USB Midi")))
@@ -16,6 +16,8 @@
    2 {:action "trigger"   :hit true}
    3 {:action "pause"     :hit true}
    4 {:action "reverse"   :hit true}
+   5 {:action "undo"      :hit true}
+   6 {:action "multiply"  :hit false}
    }
   )
 
