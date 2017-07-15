@@ -1,14 +1,16 @@
 (ns beatboxchad-live.midi
-  [:require 
+  [:require
    [overtone.core :refer :all]
    [beatboxchad-live.sooperlooper :refer :all]
    ]
   )
 
-; midi devices I own FIXME nullpointer when device not connected. do a rescue. 
-;(def microkey (midi-mk-full-device-key (midi-find-connected-device "microKEY37")))
-;(def v49      (midi-mk-full-device-key (midi-find-connected-device "V49")))
-;(def fcb      (midi-mk-full-device-key (midi-find-connected-device "USB Midi")))
+                                        ; midi devices I own FIXME nullpointer when device not connected. do a rescue.
+                                        ; actually dig this. do a mount thing. Conditionally. If the connected devices are there, no defstate
+; but if they aren't, then defstate the midi and start three vmpk instances.
+(def microkey (midi-mk-full-device-key (midi-find-connected-device "microKEY37")))
+(def v49      (midi-mk-full-device-key (midi-find-connected-device "V49")))
+(def fcb      (midi-mk-full-device-key (midi-find-connected-device "USB Midi")))
 
 (def loop-ops
   {0 {:action "record"    :hit false}
@@ -31,7 +33,7 @@
                               "hit"
                               "down")
                     ]
-                (beatboxchad-live.sooperlooper/loop-op 
+                (loop-op
                   loop-index
                   (:action (get loop-ops cmd))
                   loop-op
@@ -51,7 +53,7 @@
                     cmd (mod note 10)
                     ]
                 (if-not (:hit (get loop-ops cmd))
-                  (beatboxchad-live.sooperlooper/loop-op 
+                  (beatboxchad-live.sooperlooper/loop-op
                     loop-index
                     (:action (get loop-ops cmd))
                     "up"

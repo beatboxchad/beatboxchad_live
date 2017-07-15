@@ -1,12 +1,13 @@
 (ns beatboxchad-live.osc
-  [:require 
+  [:require
    [overtone.core :refer :all]
    [mount.core :as mount]
    ]
   )
+(def overtone-osc (osc-server 9960 "osc-overtone") )
 
-(def overtone-osc (osc-server 9960 "osc-overtone"))
 (defn osc-up []
+
   )
 
 (defn osc-down []

@@ -10,6 +10,6 @@
                  [mount "0.1.11"]
                  [me.raynes/conch "0.8.0"]
                  ]
-  :jvm-opts ^:replace []
+  :jvm-opts ^:replace ["-Xss2m" "-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1"]
   ;:test-selectors {:sooperlooper :sooperlooper}
   )
